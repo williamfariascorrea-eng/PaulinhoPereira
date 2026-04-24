@@ -221,9 +221,10 @@ document.addEventListener('DOMContentLoaded', function() {
     revealOnScroll(); // Check on load
 
     // ============================================
-    // BOTÃO VOLTAR AO TOPO
+    // BOTÕES VOLTAR AO TOPO / DESCER
     // ============================================
     const backToTop = document.getElementById('backToTop');
+    const scrollDown = document.getElementById('scrollDown');
 
     window.addEventListener('scroll', function() {
         if (window.scrollY > 500) {
@@ -231,14 +232,35 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             backToTop.classList.remove('visible');
         }
+        
+        // Esconder botão descer após rolagem
+        if (window.scrollY > 300) {
+            if (scrollDown) scrollDown.style.opacity = '0';
+        } else {
+            if (scrollDown) scrollDown.style.opacity = '1';
+        }
     });
 
-    backToTop.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    if (backToTop) {
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
-    });
+    }
+
+    if (scrollDown) {
+        scrollDown.addEventListener('click', function() {
+            const contato = document.getElementById('contato');
+            if (contato) {
+                contato.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'end'
+                });
+            }
+        });
+    }
 
     // ============================================
     // FORMULÁRIO CONTATO
