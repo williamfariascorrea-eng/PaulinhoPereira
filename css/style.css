@@ -40,15 +40,15 @@ input, textarea {
     --accent-dark: #553c9a;
 
     /* Neutral Colors - Modern com identidade */
-    --bg: #f8f9fa; /* Quase branco mas com vida */
-    --bg-light: #ffffff; /* Branco puro para cards */
-    --bg-card: #ffffff;
-    --bg-hover: #f0fdf4; /* Verde clarinho no hover */
+    --bg: #f0fdf4; /* Verde clarinho sutil como fundo principal */
+    --bg-light: #ffffff; /* Branco para seções específicas */
+    --bg-card: #f8fdf9; /* Cards com leve tom verde */
+    --bg-hover: #ecfdf5; /* Verde um pouco mais presente no hover */
     --text: #1a1a1a;
     --text-muted: #6b7280;
     --text-dim: #9ca3af;
-    --border: #e5e7eb;
-    --border-light: #f3f4f6;
+    --border: #d1fae5; /* Borda verde clarinha */
+    --border-light: #ecfdf5;
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
