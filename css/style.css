@@ -1684,10 +1684,10 @@ body {
     right: 30px;
     width: 48px;
     height: 48px;
-    background: var(--primary) !important;
-    border: 1px solid var(--primary-dark);
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
     border-radius: 12px;
-    color: white !important;
+    color: var(--text) !important;
     cursor: pointer;
     display: flex !important;
     align-items: center;
@@ -1696,11 +1696,13 @@ body {
     z-index: 999;
     opacity: 1 !important;
     visibility: visible !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .scroll-down-btn:hover {
-    background: var(--primary-dark) !important;
+    background: var(--primary) !important;
+    color: white !important;
+    border-color: var(--primary) !important;
     transform: translateY(-2px);
 }
 
@@ -1710,12 +1712,18 @@ body {
         width: 40px;
         height: 40px;
         right: 20px;
+        background: var(--bg-card) !important;
+        color: var(--text) !important;
+        border: 1px solid var(--border) !important;
     }
     
     .back-to-top {
         right: 20px;
         width: 40px;
         height: 40px;
+        background: var(--bg-card) !important;
+        color: var(--text) !important;
+        border: 1px solid var(--border) !important;
     }
 }
 

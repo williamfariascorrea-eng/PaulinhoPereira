@@ -243,8 +243,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (backToTop) {
         backToTop.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
+            // Rolagem em partes (25% da altura da janela por vez)
+            const scrollStep = window.innerHeight * 0.25;
+            window.scrollBy({
+                top: -scrollStep,
                 behavior: 'smooth'
             });
         });
@@ -252,13 +254,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (scrollDown) {
         scrollDown.addEventListener('click', function() {
-            const contato = document.getElementById('contato');
-            if (contato) {
-                contato.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'end'
-                });
-            }
+            // Rolagem em partes (25% da altura da janela por vez)
+            const scrollStep = window.innerHeight * 0.25;
+            window.scrollBy({
+                top: scrollStep,
+                behavior: 'smooth'
+            });
         });
     }
 
