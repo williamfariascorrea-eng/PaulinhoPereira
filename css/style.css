@@ -1677,26 +1677,72 @@ body {
     transform: translateY(-4px);
 }
 
+/* Ajuste para o botão descer ficar acima do subir */
 .scroll-down-btn {
-    position: absolute;
-    bottom: 120px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 50px;
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
     background: var(--primary) !important;
-    border: 2px solid white;
-    border-radius: 50%;
+    border: 1px solid var(--primary-dark);
+    border-radius: 12px;
     color: white !important;
     cursor: pointer;
     display: flex !important;
     align-items: center;
     justify-content: center;
     transition: all var(--transition-base);
-    z-index: 100;
-    animation: scrollBounce 2s infinite;
+    z-index: 999;
     opacity: 1 !important;
     visibility: visible !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.scroll-down-btn:hover {
+    background: var(--primary-dark) !important;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .scroll-down-btn {
+        bottom: 80px;
+        width: 40px;
+        height: 40px;
+        right: 20px;
+    }
+    
+    .back-to-top {
+        right: 20px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.scroll-down-btn {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    background: var(--primary) !important;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: white !important;
+    cursor: pointer;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
+    z-index: 999;
+    opacity: 1 !important;
+    visibility: visible !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.scroll-down-btn:hover {
+    background: var(--primary-dark) !important;
+    transform: translateY(-2px);
 }
 
 .scroll-down-btn:hover {
