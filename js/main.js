@@ -261,8 +261,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (scrollInterval) return;
         scrollInterval = setInterval(function() {
             window.scrollBy({
-                top: direction * scrollSpeed,
-                behavior: 'instant' // instant para não conflitar com setInterval
+                top: direction * scrollSpeed
+                // Sem behavior - rolagem instantânea para continuidade
             });
         }, scrollDelay);
     }
