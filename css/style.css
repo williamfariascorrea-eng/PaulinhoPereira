@@ -681,7 +681,7 @@ button {
 
 .campaign-header {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
     gap: 12px;
     margin-top: 10px;
 }
@@ -709,18 +709,18 @@ button {
 }
 
 .campaign-header-main img {
-    aspect-ratio: auto;
+    aspect-ratio: 1.06;
     object-position: center center;
 }
 
 .campaign-header-stack {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
 }
 
 .campaign-header-stack img {
-    aspect-ratio: auto;
+    aspect-ratio: 1.06;
     object-position: center center;
 }
 
@@ -901,8 +901,12 @@ button {
         width: min(100%, 360px);
     }
 
-    .campaign-header-stack {
+    .campaign-header {
         grid-template-columns: 1fr;
+    }
+
+    .campaign-header-stack {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
     }
 
@@ -1111,7 +1115,7 @@ button {
 
     .campaign-header-main img,
     .campaign-header-stack img {
-        aspect-ratio: auto;
+        aspect-ratio: 1.12;
     }
 
     .campaign-header-copy {
