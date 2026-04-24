@@ -252,15 +252,82 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Variáveis para controle de scroll contínuo
+    let scrollInterval = null;
+    const scrollSpeed = 2; // pixels por tick (suave)
+    const scrollDelay = 16; // ~60fps
+
+    function startScrolling(direction) {
+        if (scrollInterval) return;
+        scrollInterval = setInterval(function() {
+            window.scrollBy({
+                top: direction * scrollSpeed,
+                behavior: 'instant' // instant para não conflitar com setInterval
+            });
+        }, scrollDelay);
+    }
+
+    function stopScrolling() {
+        if (scrollInterval) {
+            clearInterval(scrollInterval);
+            scrollInterval = null;
+        }
+    }
+
+    // Botão Descer (scroll down)
     if (scrollDown) {
+        // Click normal: rola 25% da tela
         scrollDown.addEventListener('click', function() {
-            // Rolagem em partes (25% da altura da janela por vez)
             const scrollStep = window.innerHeight * 0.25;
             window.scrollBy({
                 top: scrollStep,
                 behavior: 'smooth'
             });
         });
+
+        // Segurar pressionado: scroll contínuo
+        scrollDown.addEventListener('mousedown', function(e) {
+            e.preventDefault();
+            startScrolling(1);
+        });
+        scrollDown.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            startScrolling(1);
+        });
+
+        // Soltar: parar scroll
+        scrollDown.addEventListener('mouseup', stopScrolling);
+        scrollDown.addEventListener('mouseleave', stopScrolling);
+        scrollDown.addEventListener('touchend', stopScrolling);
+        scrollDown.addEventListener('touchcancel', stopScrolling);
+    }
+
+    // Botão Subir (scroll up)
+    if (backToTop) {
+        // Click normal: rola 25% da tela
+        backToTop.addEventListener('click', function() {
+            const scrollStep = window.innerHeight * 0.25;
+            window.scrollBy({
+                top: -scrollStep,
+                behavior: 'smooth'
+            });
+        });
+
+        // Segurar pressionado: scroll contínuo
+        backToTop.addEventListener('mousedown', function(e) {
+            e.preventDefault();
+            startScrolling(-1);
+        });
+        backToTop.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            startScrolling(-1);
+        });
+
+        // Soltar: parar scroll
+        backToTop.addEventListener('mouseup', stopScrolling);
+        backToTop.addEventListener('mouseleave', stopScrolling);
+        backToTop.addEventListener('touchend', stopScrolling);
+        backToTop.addEventListener('touchcancel', stopScrolling);
     }
 
     // ============================================

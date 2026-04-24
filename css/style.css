@@ -1905,34 +1905,101 @@ body {
 
     .hero-stats {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
     }
 
     .stat-divider {
         display: none;
     }
 
+    /* Cards mais compactos no mobile */
+    .stat-box {
+        padding: 20px 15px;
+    }
+    
+    .stat-box .stat-number {
+        font-size: 2rem;
+    }
+    
+    .stat-box .stat-label {
+        font-size: 0.85rem;
+    }
+
     .info-container {
         grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .info-card {
+        padding: 20px 15px;
+    }
+    
+    .info-icon {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+    }
+    
+    .info-content h3 {
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+    }
+    
+    .info-content p {
+        font-size: 0.8rem;
     }
 
     .about-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .about-card.main-card,
     .about-card.wide-card {
         grid-column: span 1;
     }
+    
+    .about-card {
+        padding: 24px 20px;
+    }
+    
+    .card-number {
+        font-size: 3rem;
+    }
+    
+    .card-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .card-content p {
+        font-size: 0.9rem;
+    }
 
     .projects-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .project-card {
+        padding: 0;
+    }
+    
+    .project-body {
+        padding: 20px;
+    }
+    
+    .project-body h3 {
+        font-size: 1.1rem;
+    }
+    
+    .project-body p {
+        font-size: 0.85rem;
     }
 
     .timeline-item {
         width: 100%;
         padding: 0 0 0 30px;
         text-align: left !important;
+        margin-bottom: 40px;
     }
 
     .timeline-line {
@@ -1943,13 +2010,31 @@ body {
         left: 0 !important;
         right: auto !important;
     }
+    
+    .timeline-content {
+        padding: 20px;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .timeline-content p {
+        font-size: 0.85rem;
+    }
 
     .stats-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
     }
 
     .curiosity-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .curiosity-card {
+        padding: 15px;
     }
 
     .footer-grid {
@@ -1959,6 +2044,132 @@ body {
 
     .footer-social {
         justify-content: center;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+    
+    .section-header {
+        margin-bottom: 30px;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .section-desc {
+        font-size: 0.9rem;
+        padding: 0 15px;
+    }
+    
+    /* Hero mais compacto no mobile */
+    .hero {
+        min-height: 80vh;
+        padding: 80px 20px 60px;
+    }
+    
+    .hero-title {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 24px;
+    }
+    
+    /* Stats ainda mais compactas */
+    .stat-box {
+        padding: 15px 10px;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
+    
+    /* Vídeo mais compacto no mobile */
+    .media-content {
+        padding: 0 15px;
+    }
+    
+    .video-embed {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .video-embed iframe {
+        max-height: 200px;
+    }
+    
+    /* Timeline mais compacta */
+    .timeline-item {
+        margin-bottom: 30px;
+    }
+    
+    .timeline-content {
+        padding: 16px;
+    }
+    
+    .timeline-stats {
+        padding: 12px;
+        gap: 16px;
+    }
+    
+    .t-number {
+        font-size: 1.2rem;
+    }
+    
+    .t-label {
+        font-size: 0.7rem;
+    }
+    
+    /* Wiki mais compacto */
+    .wiki-content {
+        padding: 24px 20px;
+    }
+    
+    .wiki-article h2 {
+        font-size: 1.5rem;
+        margin: 30px 0 15px;
+    }
+    
+    .wiki-article h3 {
+        font-size: 1.1rem;
+        margin: 20px 0 12px;
+    }
+    
+    .wiki-article p {
+        font-size: 0.9rem;
+    }
+    
+    /* Rodapé mais compacto */
+    .footer-brand p {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+    }
+    
+    .footer-contact-small {
+        gap: 10px;
+        margin-top: 8px;
+    }
+    
+    .contact-small {
+        font-size: 0.7rem;
     }
 }
 
