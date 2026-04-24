@@ -1652,18 +1652,29 @@ body {
     right: 30px;
     width: 48px;
     height: 48px;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
+    background: var(--primary) !important;
+    border: 1px solid var(--primary-dark) !important;
     border-radius: 12px;
-    color: var(--text);
+    color: white !important;
     cursor: pointer;
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     opacity: 0;
     visibility: hidden;
     transition: all var(--transition-base);
     z-index: 999;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
+    transform: translateY(-2px);
 }
 
 .back-to-top.visible {
@@ -1684,10 +1695,10 @@ body {
     right: 30px;
     width: 48px;
     height: 48px;
-    background: var(--bg-card) !important;
-    border: 1px solid var(--border) !important;
+    background: var(--primary) !important;
+    border: 1px solid var(--primary-dark) !important;
     border-radius: 12px;
-    color: var(--text) !important;
+    color: white !important;
     cursor: pointer;
     display: flex !important;
     align-items: center;
@@ -1696,13 +1707,12 @@ body {
     z-index: 999;
     opacity: 1 !important;
     visibility: visible !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 .scroll-down-btn:hover {
-    background: var(--primary) !important;
-    color: white !important;
-    border-color: var(--primary) !important;
+    background: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
     transform: translateY(-2px);
 }
 
