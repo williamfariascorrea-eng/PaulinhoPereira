@@ -695,7 +695,7 @@ button {
 
 .campaign-header {
     display: grid;
-    grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+    grid-template-columns: 1fr;
     gap: 12px;
     margin-top: 10px;
 }
@@ -717,15 +717,14 @@ button {
 .campaign-header-left img,
 .campaign-header-right img {
     width: 100%;
-    height: 100%;
+    height: auto;
     display: block;
-    object-fit: cover;
     transition: transform 0.28s ease, filter 0.28s ease, box-shadow 0.28s ease;
 }
 
 .campaign-header-left img {
-    aspect-ratio: 0.72;
-    object-position: center top;
+    object-fit: contain;
+    object-position: center center;
 }
 
 .campaign-header-right {
@@ -735,7 +734,7 @@ button {
 }
 
 .campaign-header-right img {
-    aspect-ratio: 1.06;
+    object-fit: contain;
     object-position: center center;
 }
 
@@ -923,10 +922,6 @@ button {
 
     .portrait-frame {
         width: min(100%, 360px);
-    }
-
-    .campaign-header {
-        grid-template-columns: 1fr;
     }
 
     .info-card.feature,
@@ -1129,11 +1124,6 @@ button {
 
     .campaign-header-right {
         gap: 10px;
-    }
-
-    .campaign-header-left img,
-    .campaign-header-right img {
-        aspect-ratio: 1.12;
     }
 
     .campaign-header-copy {
