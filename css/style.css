@@ -700,7 +700,6 @@ button {
     margin-top: 10px;
 }
 
-.campaign-header-left,
 .campaign-header-right img {
     overflow: hidden;
     border-radius: 18px;
@@ -709,22 +708,11 @@ button {
     border: 1px solid rgba(20, 39, 78, 0.08);
 }
 
-.campaign-header-left {
-    min-height: 0;
-    align-self: start;
-}
-
-.campaign-header-left img,
 .campaign-header-right img {
     width: 100%;
     height: auto;
     display: block;
     transition: transform 0.28s ease, filter 0.28s ease, box-shadow 0.28s ease;
-}
-
-.campaign-header-left img {
-    object-fit: contain;
-    object-position: center center;
 }
 
 .campaign-header-right {
@@ -764,7 +752,6 @@ button {
 .mini-profile img,
 .hero-badge img,
 .image-card img,
-.campaign-header-left,
 .campaign-header-right img {
     transition: transform 0.28s ease, box-shadow 0.28s ease, filter 0.28s ease;
 }
@@ -781,9 +768,6 @@ button {
 .image-card img:hover,
 .image-card img:active,
 .image-card img.is-pressed,
-.campaign-header-left:hover,
-.campaign-header-left:active,
-.campaign-header-left.is-pressed,
 .campaign-header-right img:hover,
 .campaign-header-right img:active,
 .campaign-header-right img.is-pressed {
