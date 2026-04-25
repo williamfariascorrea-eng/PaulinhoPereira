@@ -431,12 +431,15 @@ button {
     font-size: 2rem;
     line-height: 1.05;
     letter-spacing: -0.04em;
+    max-width: 11ch;
 }
 
 .social-card p {
     margin: 0 0 24px;
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.7;
+    max-width: 28ch;
+    font-size: 1.02rem;
 }
 
 .mini-profile {
@@ -677,6 +680,17 @@ button {
 
 .statement-card {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(235, 229, 220, 0.92));
+    position: relative;
+}
+
+.statement-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at top right, rgba(52, 152, 219, 0.14), transparent 30%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.28), transparent 32%);
+    pointer-events: none;
 }
 
 .campaign-header {
@@ -697,20 +711,21 @@ button {
 
 .campaign-header-left {
     min-height: 0;
+    align-self: start;
 }
 
 .campaign-header-left img,
 .campaign-header-right img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
-    object-fit: contain;
+    object-fit: cover;
     transition: transform 0.28s ease, filter 0.28s ease, box-shadow 0.28s ease;
 }
 
 .campaign-header-left img {
-    aspect-ratio: 1.06;
-    object-position: center center;
+    aspect-ratio: 0.72;
+    object-position: center top;
 }
 
 .campaign-header-right {
@@ -725,7 +740,9 @@ button {
 }
 
 .campaign-header-copy {
-    margin-top: 10px;
+    margin-top: 14px;
+    position: relative;
+    z-index: 1;
 }
 
 .campaign-header-copy h3 {
@@ -735,6 +752,13 @@ button {
     line-height: 1.05;
     letter-spacing: -0.04em;
     color: var(--navy);
+}
+
+.campaign-header-copy p {
+    margin: 10px 0 0;
+    max-width: 34ch;
+    color: var(--muted);
+    line-height: 1.65;
 }
 
 .portrait-frame,
