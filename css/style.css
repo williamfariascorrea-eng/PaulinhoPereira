@@ -199,7 +199,7 @@ button {
 .hero-card {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.85fr);
+    grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.82fr);
     gap: 22px;
     overflow: hidden;
     background:
@@ -208,7 +208,7 @@ button {
         linear-gradient(115deg, rgba(11, 24, 52, 0.98) 0%, rgba(20, 39, 78, 0.92) 42%, rgba(24, 58, 108, 0.9) 100%);
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-strong);
-    min-height: 500px;
+    min-height: 0;
     padding: 22px;
     color: var(--white);
 }
@@ -253,9 +253,18 @@ button {
 .hero-copy {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     max-width: 500px;
     padding-right: 8px;
+}
+
+.hero-copy-main {
+    align-self: start;
+}
+
+.hero-copy-support {
+    max-width: none;
+    padding-right: 0;
 }
 
 .hero-copy h1 {
@@ -274,6 +283,13 @@ button {
     font-size: 1rem;
     line-height: 1.58;
     color: rgba(255, 255, 255, 0.84);
+}
+
+.hero-side-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-self: start;
 }
 
 .hero-actions {
@@ -303,7 +319,7 @@ button {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
-    margin-top: 14px;
+    margin-top: 12px;
 }
 
 .metric {
@@ -327,12 +343,12 @@ button {
 
 .hero-portrait {
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-end;
 }
 
 .portrait-frame {
-    width: min(100%, 300px);
+    width: min(100%, 260px);
     padding: 10px;
     border-radius: 28px;
     background:
@@ -352,12 +368,11 @@ button {
 }
 
 .hero-footer {
-    grid-column: 1 / -1;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    margin-top: 4px;
+    margin-top: 12px;
 }
 
 .hero-badge {
@@ -389,6 +404,10 @@ button {
 .hero-side {
     display: grid;
     gap: 0;
+}
+
+.hero-side-compact {
+    display: none;
 }
 
 .side-card,
@@ -974,6 +993,14 @@ button {
         gap: 14px;
     }
 
+    .hero-side-panel {
+        order: 2;
+    }
+
+    .hero-copy-main {
+        order: 1;
+    }
+
     .hero-copy {
         max-width: none;
     }
@@ -984,6 +1011,15 @@ button {
 
     .portrait-frame {
         width: min(100%, 280px);
+    }
+
+    .hero-side-desktop {
+        display: none;
+    }
+
+    .hero-side-compact {
+        display: grid;
+        grid-column: 1 / -1;
     }
 
     .info-card.feature,
@@ -1175,6 +1211,12 @@ button {
     .hero-badge {
         width: 100%;
         align-items: flex-start;
+    }
+
+    .hero-copy-main h1,
+    .hero-copy-support,
+    .hero-text {
+        max-width: none;
     }
 
     .social-card h2 {
