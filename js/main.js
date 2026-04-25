@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const floatingSocial = document.getElementById("floatingSocial");
     const floatingSocialToggle = document.getElementById("floatingSocialToggle");
     const interactiveImages = document.querySelectorAll(
-        ".portrait-frame, .mini-profile img, .hero-badge img, .image-card img, .campaign-header-main, .campaign-header-stack img"
+        ".portrait-frame, .mini-profile img, .hero-badge img, .campaign-header-right img"
     );
 
     const syncNavbar = () => {
