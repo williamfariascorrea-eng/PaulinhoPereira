@@ -1,379 +1,1844 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Paulinho Pereira | pré-candidatura com trabalho, presença pública e compromisso com São Lourenço do Sul e o Rio Grande do Sul.">
-    <meta name="keywords" content="Paulinho Pereira, política, São Lourenço do Sul, deputado estadual 2026, pré-candidato, Podemos">
-    <meta name="author" content="Paulinho Pereira">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:;">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Paulinho Pereira | Trabalho firme pelo Rio Grande do Sul">
-    <meta property="og:description" content="Uma trajetória de presença pública, articulação e compromisso com as pessoas.">
-    <meta property="og:image" content="images/FOTO DE PERFIL.jpg">
-    <meta property="og:url" content="https://paulinho-pereira.onrender.com">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Paulinho Pereira | Trabalho firme pelo Rio Grande do Sul">
-    <meta property="twitter:description" content="Pré-candidatura com presença pública, articulação e compromisso com resultado.">
-    <meta property="twitter:image" content="images/FOTO DE PERFIL.jpg">
-    <title>Paulinho Pereira | Trabalho firme pelo Rio Grande do Sul</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="icon" href="images/PODEMOS simbolo.jpg" type="image/jpeg">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Paulinho Pereira | Pré-candidato a Deputado Estadual RS 2026 – Podemos</title>
+  <meta name="description" content="Paulinho Pereira, pré-candidato a Deputado Estadual pelo Rio Grande do Sul em 2026. Partido Podemos (PODE). Três mandatos de vereador em São Lourenço do Sul. Trabalho sério, presença real e compromisso com o RS." />
+  <meta name="keywords" content="Paulinho Pereira, Deputado Estadual RS, Podemos, PODE, Rio Grande do Sul, São Lourenço do Sul, 2026, eleições" />
+  <meta name="author" content="Paulinho Pereira" />
+
+  <!-- Open Graph (WhatsApp / Facebook preview) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://paulinhopereira.onrender.com/" />
+  <meta property="og:title" content="Paulinho Pereira | Deputado Estadual RS 2026 – Podemos" />
+  <meta property="og:description" content="Três mandatos de vereador, agora candidato a Deputado Estadual pelo Rio Grande do Sul. Partido Podemos (PODE). Trabalho firme pelo RS." />
+  <meta property="og:image" content="https://paulinhopereira.onrender.com/images/FOTO DE PERFIL.jpg" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Paulinho Pereira | Deputado Estadual RS 2026" />
+  <meta name="twitter:description" content="Três mandatos de vereador, agora candidato a Deputado Estadual pelo RS. Podemos (PODE)." />
+  <meta name="twitter:image" content="https://paulinhopereira.onrender.com/images/FOTO DE PERFIL.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/PODEMOS simbolo.jpg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════════════
+       RESET & VARIÁVEIS
+    ═══════════════════════════════════════ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --azul:       #003087;
+      --azul-medio: #004db3;
+      --azul-claro: #e8eef8;
+      --verde:      #00A550;
+      --verde-claro:#e6f5ee;
+      --branco:     #ffffff;
+      --cinza-f:    #f7f8fa;
+      --cinza-1:    #e8eaee;
+      --cinza-2:    #b0b5bf;
+      --cinza-3:    #6b7280;
+      --cinza-4:    #1e2530;
+      --texto:      #111827;
+      --fonte-titulo: 'Playfair Display', Georgia, serif;
+      --fonte-corpo:  'Barlow', sans-serif;
+      --sombra-md:  0 4px 24px rgba(0,48,135,0.10);
+      --sombra-lg:  0 12px 48px rgba(0,48,135,0.16);
+      --raio:       12px;
+      --raio-sm:    8px;
+      --max:        1200px;
+      --nav-h:      68px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--fonte-corpo);
+      color: var(--texto);
+      background: var(--branco);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    .container {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ═══════════════════════════════════════
+       BARRA DO PARTIDO (topo fixo)
+    ═══════════════════════════════════════ */
+    .barra-partido {
+      background: var(--azul);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 7px 0;
+      position: relative;
+      z-index: 200;
+    }
+
+    .barra-partido .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .barra-partido .partido-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0.95;
+    }
+
+    .barra-partido .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--verde);
+      display: inline-block;
+    }
+
+    .barra-numero {
+      background: var(--verde);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 3px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ═══════════════════════════════════════
+       NAVEGAÇÃO
+    ═══════════════════════════════════════ */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--cinza-1);
+      height: var(--nav-h);
+    }
+
+    .nav .container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-logo img {
+      height: 36px;
+      width: 36px;
+      object-fit: contain;
+    }
+
+    .nav-logo-texto {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .nav-logo-nome {
+      font-family: var(--fonte-titulo);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--azul);
+    }
+
+    .nav-logo-cargo {
+      font-size: 11px;
+      color: var(--cinza-3);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--cinza-3);
+      padding: 6px 14px;
+      border-radius: var(--raio-sm);
+      transition: color .2s, background .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--azul);
+      background: var(--azul-claro);
+    }
+
+
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--azul);
+      border-radius: 2px;
+      transition: .3s;
+    }
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    .hero {
+      background: linear-gradient(135deg, var(--azul) 0%, #001a5c 100%);
+      min-height: calc(100vh - var(--nav-h) - 34px);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 70% 50%, rgba(0,165,80,0.15) 0%, transparent 60%),
+        radial-gradient(circle at 20% 80%, rgba(0,77,179,0.3) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    /* grade geométrica decorativa */
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: 0; top: 0;
+      width: 55%;
+      height: 100%;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      align-items: center;
+      gap: 4rem;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,165,80,0.18);
+      border: 1px solid rgba(0,165,80,0.4);
+      color: #6effc0;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 40px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      background: var(--verde);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-family: var(--fonte-titulo);
+      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.12;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--verde);
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 520px;
+      margin-bottom: 2.25rem;
+      line-height: 1.7;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primario {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--verde);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 40px;
+      transition: background .2s, transform .15s, box-shadow .2s;
+      box-shadow: 0 4px 20px rgba(0,165,80,0.35);
+    }
+
+    .btn-primario:hover {
+      background: #009044;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,165,80,0.45);
+    }
+
+    .btn-secundario {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 40px;
+      transition: background .2s, transform .15s;
+    }
+
+    .btn-secundario:hover {
+      background: rgba(255,255,255,0.18);
+      transform: translateY(-2px);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .hero-stat-num {
+      font-family: var(--fonte-titulo);
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--verde);
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+      margin-top: 4px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Foto do candidato no hero */
+    .hero-foto-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .hero-foto-fundo {
+      position: absolute;
+      bottom: 0;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(0,165,80,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-foto {
+      position: relative;
+      z-index: 2;
+      width: 340px;
+      height: 420px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: var(--raio) var(--raio) 0 0;
+      border: 3px solid rgba(0,165,80,0.4);
+      box-shadow: var(--sombra-lg);
+    }
+
+    /* Selo partido flutuante */
+    .hero-partido-selo {
+      position: absolute;
+      bottom: 40px;
+      right: -20px;
+      background: #fff;
+      border-radius: var(--raio);
+      padding: 12px 16px;
+      box-shadow: var(--sombra-lg);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 5;
+    }
+
+    .hero-partido-selo img {
+      height: 40px;
+      width: 40px;
+      object-fit: contain;
+    }
+
+    .hero-partido-info { line-height: 1.2; }
+
+    .hero-partido-info strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--azul);
+    }
+
+    .hero-partido-info span {
+      font-size: 12px;
+      color: var(--cinza-3);
+    }
+
+    /* ═══════════════════════════════════════
+       SEÇÕES GENÉRICAS
+    ═══════════════════════════════════════ */
+    .secao {
+      padding: 5rem 0;
+    }
+
+    .secao-cinza { background: var(--cinza-f); }
+    .secao-azul  { background: var(--azul); color: #fff; }
+
+    .secao-header {
+      text-align: center;
+      max-width: 660px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .label-secao {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--verde);
+      margin-bottom: 0.75rem;
+    }
+
+    .secao-azul .label-secao { color: #6effc0; }
+
+    .secao-header h2 {
+      font-family: var(--fonte-titulo);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 900;
+      color: var(--azul);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .secao-azul .secao-header h2 { color: #fff; }
+
+    .secao-header p {
+      color: var(--cinza-3);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .secao-azul .secao-header p { color: rgba(255,255,255,0.7); }
+
+    /* ═══════════════════════════════════════
+       SOBRE
+    ═══════════════════════════════════════ */
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .sobre-foto {
+      position: relative;
+    }
+
+    .sobre-foto img {
+      width: 100%;
+      border-radius: var(--raio);
+      box-shadow: var(--sombra-lg);
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .sobre-foto-badge {
+      position: absolute;
+      bottom: -20px;
+      left: 30px;
+      background: var(--azul);
+      color: #fff;
+      padding: 14px 20px;
+      border-radius: var(--raio);
+      box-shadow: var(--sombra-lg);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .sobre-foto-badge strong {
+      display: block;
+      font-size: 22px;
+      font-family: var(--fonte-titulo);
+      color: var(--verde);
+    }
+
+    .sobre-texto h2 {
+      font-family: var(--fonte-titulo);
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 900;
+      color: var(--azul);
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+
+    .sobre-texto p {
+      color: var(--cinza-3);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .sobre-valores {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 1.5rem;
+    }
+
+    .tag-valor {
+      background: var(--azul-claro);
+      color: var(--azul);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 40px;
+    }
+
+    /* ═══════════════════════════════════════
+       PRIORIDADES
+    ═══════════════════════════════════════ */
+    .prioridades-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .prioridade-card {
+      background: var(--branco);
+      border-radius: var(--raio);
+      padding: 1.75rem 2rem;
+      border: 1px solid var(--cinza-1);
+      border-left: 3px solid var(--azul);
+      transition: border-color .2s, transform .2s;
+    }
+
+    .prioridade-card:hover {
+      border-left-color: var(--verde);
+      transform: translateY(-3px);
+    }
+
+    .prioridade-num { display: none; }
+
+    .prioridade-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .prioridade-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--azul);
+      margin-bottom: 0.5rem;
+    }
+
+    .prioridade-card p {
+      font-size: 0.93rem;
+      color: var(--cinza-3);
+      line-height: 1.65;
+    }
+
+    /* ═══════════════════════════════════════
+       TRAJETÓRIA / LINHA DO TEMPO
+    ═══════════════════════════════════════ */
+    .timeline {
+      position: relative;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 80px;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--azul), var(--verde));
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+      align-items: flex-start;
+    }
+
+    .timeline-ano {
+      min-width: 60px;
+      text-align: right;
+      font-family: var(--fonte-titulo);
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--azul);
+      line-height: 1.5;
+    }
+
+    .timeline-dot {
+      min-width: 20px;
+      display: flex;
+      justify-content: center;
+      padding-top: 6px;
+    }
+
+    .timeline-dot span {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--verde);
+      border: 3px solid var(--branco);
+      box-shadow: 0 0 0 2px var(--verde);
+      display: block;
+    }
+
+    .timeline-item:last-child .timeline-dot span {
+      background: var(--azul);
+      box-shadow: 0 0 0 2px var(--azul);
+      animation: pulse-azul 2s infinite;
+    }
+
+    @keyframes pulse-azul {
+      0%   { box-shadow: 0 0 0 2px var(--azul); }
+      50%  { box-shadow: 0 0 0 8px rgba(0,48,135,0.15); }
+      100% { box-shadow: 0 0 0 2px var(--azul); }
+    }
+
+    .timeline-conteudo {
+      background: var(--cinza-f);
+      border-radius: var(--raio);
+      padding: 1.25rem 1.5rem;
+      flex: 1;
+    }
+
+    .timeline-conteudo h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--azul);
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-conteudo p {
+      font-size: 0.95rem;
+      color: var(--cinza-3);
+      line-height: 1.65;
+    }
+
+    .timeline-badge {
+      display: inline-block;
+      background: var(--verde-claro);
+      color: var(--verde);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+
+    .timeline-item:last-child .timeline-badge {
+      background: var(--azul-claro);
+      color: var(--azul);
+    }
+
+    /* ═══════════════════════════════════════
+       PROJETOS / PROPOSTAS
+    ═══════════════════════════════════════ */
+    .propostas-grid {
+      display: flex;
+      flex-direction: column;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .proposta-card {
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 1.5rem 0;
+    }
+
+    .proposta-card:last-child { border-bottom: none; }
+
+    .proposta-card:hover { background: none; transform: none; }
+
+    .proposta-icon {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .proposta-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+
+    .proposta-card p {
+      font-size: 0.93rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.65;
+    }
+
+    /* ═══════════════════════════════════════
+       PRESENÇA (galeria)
+    ═══════════════════════════════════════ */
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .galeria-item {
+      border-radius: var(--raio);
+      overflow: hidden;
+      box-shadow: var(--sombra-md);
+      position: relative;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .galeria-item:hover { transform: translateY(-4px); box-shadow: var(--sombra-lg); }
+
+    .galeria-item img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+      transition: transform .4s;
+    }
+
+    .galeria-item:hover img { transform: scale(1.04); }
+
+    .galeria-legenda {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,30,87,0.92));
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 2rem 1rem 1rem;
+    }
+
+    /* ═══════════════════════════════════════
+       DEPOIMENTOS
+    ═══════════════════════════════════════ */
+    .depoimentos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .depoimento-card {
+      background: var(--cinza-f);
+      border-radius: var(--raio);
+      padding: 1.5rem;
+      border-left: 3px solid var(--verde);
+    }
+
+    .depoimento-texto {
+      font-size: 1rem;
+      color: var(--cinza-3);
+      line-height: 1.75;
+      font-style: italic;
+      margin-bottom: 1.25rem;
+    }
+
+    .depoimento-texto::before { content: '\201C'; }
+    .depoimento-texto::after  { content: '\201D'; }
+
+    .depoimento-autor {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .depoimento-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--azul-claro);
+      color: var(--azul);
+      font-size: 16px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .depoimento-info strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--azul);
+    }
+
+    .depoimento-info span {
+      font-size: 12px;
+      color: var(--cinza-3);
+    }
+
+    /* ═══════════════════════════════════════
+       CONTATO / APOIO
+    ═══════════════════════════════════════ */
+    .apoio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .apoio-info h2 {
+      font-family: var(--fonte-titulo);
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 900;
+      color: var(--azul);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .apoio-info p {
+      color: var(--cinza-3);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .apoio-canais { display: flex; flex-direction: column; gap: 12px; }
+
+    .canal-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      border-radius: var(--raio-sm);
+      border: 1.5px solid var(--cinza-1);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--texto);
+      transition: border-color .2s, background .2s, transform .15s;
+    }
+
+    .canal-item:hover {
+      border-color: var(--azul);
+      background: var(--azul-claro);
+      color: var(--azul);
+      transform: translateX(4px);
+    }
+
+    .canal-icon {
+      width: 40px; height: 40px;
+      border-radius: var(--raio-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .canal-icon.verde { background: var(--verde-claro); }
+    .canal-icon.azul  { background: var(--azul-claro); }
+
+    .form-card {
+      background: var(--branco);
+      border-radius: var(--raio);
+      padding: 2.5rem;
+      box-shadow: var(--sombra-lg);
+      border-top: 4px solid var(--verde);
+    }
+
+    .form-card h3 {
+      font-family: var(--fonte-titulo);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--azul);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-card .form-sub {
+      font-size: 14px;
+      color: var(--cinza-3);
+      margin-bottom: 1.75rem;
+    }
+
+    .form-grupo {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-grupo label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--cinza-4);
+      margin-bottom: 6px;
+    }
+
+    .form-grupo input,
+    .form-grupo select,
+    .form-grupo textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--cinza-1);
+      border-radius: var(--raio-sm);
+      font-family: var(--fonte-corpo);
+      font-size: 15px;
+      color: var(--texto);
+      background: #fff;
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+      resize: vertical;
+    }
+
+    .form-grupo input:focus,
+    .form-grupo select:focus,
+    .form-grupo textarea:focus {
+      border-color: var(--azul);
+      box-shadow: 0 0 0 3px rgba(0,48,135,0.08);
+    }
+
+    .form-grupo textarea { min-height: 100px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .btn-form {
+      width: 100%;
+      padding: 15px;
+      background: var(--verde);
+      color: #fff;
+      font-family: var(--fonte-corpo);
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: background .2s, transform .15s, box-shadow .2s;
+      box-shadow: 0 4px 16px rgba(0,165,80,0.3);
+    }
+
+    .btn-form:hover {
+      background: #009044;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,165,80,0.4);
+    }
+
+    .form-msg {
+      display: none;
+      text-align: center;
+      padding: 1rem;
+      background: var(--verde-claro);
+      color: var(--verde);
+      border-radius: var(--raio-sm);
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+
+    /* ═══════════════════════════════════════
+       FAIXA CTA
+    ═══════════════════════════════════════ */
+    .cta-faixa {
+      background: linear-gradient(135deg, var(--verde) 0%, #009044 100%);
+      padding: 4rem 0;
+    }
+
+    .cta-faixa .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-faixa h2 {
+      font-family: var(--fonte-titulo);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .cta-faixa p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.8);
+      margin-top: 0.5rem;
+    }
+
+    .btn-branco {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      color: var(--verde);
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 40px;
+      white-space: nowrap;
+      transition: background .2s, transform .15s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    .btn-branco:hover {
+      background: #f0fff6;
+      transform: translateY(-2px);
+    }
+
+    /* ═══════════════════════════════════════
+       RODAPÉ
+    ═══════════════════════════════════════ */
+    footer {
+      background: var(--cinza-4);
+      color: rgba(255,255,255,0.7);
+      padding: 3.5rem 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-logo {
+      font-family: var(--fonte-titulo);
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-logo span { color: var(--verde); }
+
+    .footer-desc {
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      font-size: 16px;
+      color: rgba(255,255,255,0.7);
+      transition: background .2s, color .2s;
+    }
+
+    .social-btn:hover { background: var(--verde); color: #fff; }
+
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 8px;
+      transition: color .2s;
+    }
+
+    .footer-col a:hover { color: var(--verde); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 13px;
+    }
+
+    .footer-bottom .podemos-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .podemos-badge img {
+      height: 24px;
+      width: 24px;
+      object-fit: contain;
+      opacity: 0.85;
+    }
+
+
+
+    /* ═══════════════════════════════════════
+       ANIMAÇÕES SCROLL
+    ═══════════════════════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity .65s cubic-bezier(.22,1,.36,1), transform .65s cubic-bezier(.22,1,.36,1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal-delay-1 { transition-delay: .08s; }
+    .reveal-delay-2 { transition-delay: .16s; }
+    .reveal-delay-3 { transition-delay: .24s; }
+    .reveal-delay-4 { transition-delay: .32s; }
+
+    /* ═══════════════════════════════════════
+       MOBILE
+    ═══════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .nav-links { display: none; flex-direction: column; gap: 0; }
+      .nav-links.aberto {
+        display: flex;
+        position: absolute;
+        top: var(--nav-h);
+        left: 0; right: 0;
+        background: #fff;
+        border-bottom: 1px solid var(--cinza-1);
+        padding: 1rem;
+        z-index: 99;
+      }
+      .nav-links.aberto a { padding: 12px 16px; border-radius: var(--raio-sm); }
+      .hamburger { display: flex; }
+      .hero .container { grid-template-columns: 1fr; text-align: center; }
+      .hero-foto-wrap { display: none; }
+      .hero-btns { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .sobre-grid  { grid-template-columns: 1fr; }
+      .sobre-foto  { display: none; }
+      .apoio-grid  { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .form-row    { grid-template-columns: 1fr; }
+      .whatsapp-float span { display: none; }
+      .whatsapp-float { padding: 14px; border-radius: 50%; }
+    }
+
+    @media (max-width: 600px) {
+      .barra-partido .container { gap: 0.75rem; font-size: 11px; }
+      .hero h1 { font-size: 2rem; }
+      .cta-faixa .container { flex-direction: column; text-align: center; }
+      .secao { padding: 3.5rem 0; }
+      .timeline::before { left: 50px; }
+      .timeline-ano { min-width: 36px; font-size: 1rem; }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="site-bg"></div>
 
-    <header class="header" id="topo">
-        <nav class="navbar" id="navbar">
-            <div class="container nav-container">
-                <a href="#topo" class="brand" aria-label="Paulinho Pereira">
-                    <span class="brand-top">Paulinho</span>
-                    <span class="brand-bottom">Pereira</span>
-                </a>
-
-                <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-
-                <div class="nav-panel" id="navPanel">
-                    <a href="#inicio" class="nav-link active">Início</a>
-                    <a href="#sobre" class="nav-link">Sobre</a>
-                    <a href="#prioridades" class="nav-link">Prioridades</a>
-                    <a href="#trajetoria" class="nav-link">Trajetória</a>
-                    <a href="#propostas" class="nav-link">Projetos</a>
-                    <a href="#presenca" class="nav-link">Presença</a>
-                    <a href="#contato" class="nav-cta">Fale com a equipe</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero-section" id="inicio">
-            <div class="container hero-grid">
-                <article class="hero-card reveal">
-                    <div class="hero-overlay"></div>
-                    <div class="hero-copy hero-copy-main">
-                        <p class="eyebrow">Pré-candidato a Deputado Estadual</p>
-                        <h1>Trabalho firme para defender quem move o Rio Grande do Sul.</h1>
-                    </div>
-
-                    <div class="hero-side-panel">
-                        <div class="hero-portrait">
-                            <div class="portrait-frame">
-                                <img src="images/FOTO DE PERFIL.jpg" alt="Paulinho Pereira">
-                            </div>
-                        </div>
-
-                        <div class="hero-copy hero-copy-support">
-                            <p class="hero-text">
-                                Uma trajetória construída nas ruas, no diálogo com a comunidade e na busca de soluções concretas para São Lourenço do Sul e para o Estado.
-                            </p>
-
-                            <div class="hero-actions">
-                                <a href="#trajetoria" class="btn btn-primary">Conheça a trajetória</a>
-                                <a href="#contato" class="btn btn-secondary">Fale com a equipe</a>
-                            </div>
-
-                            <div class="hero-metrics">
-                                <div class="metric">
-                                    <strong>2012</strong>
-                                    <span>Primeiro mandato</span>
-                                </div>
-                                <div class="metric">
-                                    <strong>2016</strong>
-                                    <span>Reeleição</span>
-                                </div>
-                                <div class="metric">
-                                    <strong>2020</strong>
-                                    <span>Terceiro mandato</span>
-                                </div>
-                            </div>
-
-                            <div class="hero-footer">
-                                <div class="hero-badge">
-                                    <img src="images/PODEMOS simbolo.jpg" alt="Podemos">
-                                    <span>Movimento com identidade, proximidade e firmeza.</span>
-                                </div>
-                                <div class="hero-location">São Lourenço do Sul • RS</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hero-side reveal hero-side-compact">
-                        <div class="side-card social-card">
-                            <span class="side-label">Posicionamento</span>
-                            <h2>Uma caminhada política feita com coragem, palavra e presença.</h2>
-                            <p>
-                                Pelo Rio Grande do Sul que trabalha, resiste e segue em frente com coragem.
-                            </p>
-                            <div class="mini-profile">
-                                <img src="images/FOTO INSTAGRAM PEQUENA.jpg" alt="Paulinho Pereira">
-                                <div>
-                                    <strong>Paulinho Pereira</strong>
-                                    <span>@paulinhosspereira</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <aside class="hero-side reveal hero-side-desktop">
-                    <div class="side-card social-card">
-                        <span class="side-label">Posicionamento</span>
-                        <h2>Uma caminhada política feita com coragem, palavra e presença.</h2>
-                        <p>
-                            Pelo Rio Grande do Sul que trabalha, resiste e segue em frente com coragem.
-                        </p>
-                        <div class="mini-profile">
-                            <img src="images/FOTO INSTAGRAM PEQUENA.jpg" alt="Paulinho Pereira">
-                            <div>
-                                <strong>Paulinho Pereira</strong>
-                                <span>@paulinhosspereira</span>
-                            </div>
-                        </div>
-                    </div>
-                </aside>
-            </div>
-        </section>
-
-        <section class="content-section" id="sobre">
-            <div class="container section-shell">
-                <div class="section-heading reveal">
-                    <span class="section-kicker">Sobre</span>
-                    <h2>Presença pública com credibilidade e conexão real.</h2>
-                    <p>
-                        Uma trajetória construída com presença nas ruas, diálogo institucional e compromisso com a comunidade.
-                    </p>
-                </div>
-
-                <div class="about-grid">
-                    <article class="info-card feature reveal">
-                        <span class="card-index">01</span>
-                        <h3>Mensagem de trabalho</h3>
-                        <p class="quote-card">
-                            "Hoje mais um dia de trabalho, batendo de porta em porta, levando demandas e reivindicações de São Lourenço do Sul."
-                        </p>
-                    </article>
-
-                    <article class="info-card reveal">
-                        <span class="card-index">02</span>
-                        <h3>Mensagem de articulação</h3>
-                        <p>
-                            "Hoje também fomos recebidos pela assessoria do Deputado Luciano Zucco e conversamos com o Deputado Daniel Trzeciak solicitando apoio."
-                        </p>
-                    </article>
-
-                    <article class="info-card reveal">
-                        <span class="card-index">03</span>
-                        <h3>Mensagem de propósito</h3>
-                        <p>
-                            "Mobilizar ações para ter êxito, esse é meu trabalho. Seguimos."
-                        </p>
-                    </article>
-
-                    <article class="info-card wide reveal">
-                        <span class="card-index">04</span>
-                        <h3>Mensagem de posicionamento</h3>
-                        <p>
-                            "Paulinho Pereira, trabalho sério, com transparência e respeito pela comunidade."
-                        </p>
-                        <div class="pill-row">
-                            <span>Trabalho</span>
-                            <span>Transparência</span>
-                            <span>Respeito</span>
-                            <span>Comunidade</span>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="priority-section" id="prioridades">
-            <div class="container section-shell">
-                <div class="section-heading reveal">
-                    <span class="section-kicker">Prioridades</span>
-                    <h2>Quatro frentes para um mandato presente e útil.</h2>
-                    <p>
-                        Prioridades objetivas para defender a população, fortalecer serviços e ampliar oportunidades no Rio Grande do Sul.
-                    </p>
-                </div>
-
-                <div class="priority-grid">
-                    <article class="priority-card reveal">
-                        <span class="priority-tag">01</span>
-                        <h3>Saúde mais próxima</h3>
-                        <p>Buscar recursos, apoio institucional e melhoria do atendimento para quem mais precisa.</p>
-                    </article>
-                    <article class="priority-card reveal">
-                        <span class="priority-tag">02</span>
-                        <h3>Infraestrutura que funciona</h3>
-                        <p>Defender investimentos em mobilidade, pavimentação e obras que melhoram a vida real das pessoas.</p>
-                    </article>
-                    <article class="priority-card reveal">
-                        <span class="priority-tag">03</span>
-                        <h3>Apoio ao social</h3>
-                        <p>Fortalecer entidades, projetos comunitários e ações que protegem famílias e ampliam dignidade.</p>
-                    </article>
-                    <article class="priority-card reveal">
-                        <span class="priority-tag">04</span>
-                        <h3>Articulação por resultado</h3>
-                        <p>Construir diálogo com lideranças e instituições para transformar demanda em entrega concreta.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="endorsement-section">
-            <div class="container">
-                <article class="endorsement-card reveal">
-                    <span class="section-kicker">Compromisso</span>
-                    <blockquote>
-                        “Política séria se faz com presença, palavra e responsabilidade com quem confia no trabalho.”
-                    </blockquote>
-                    <p>Uma atuação pública marcada por proximidade com a comunidade e busca constante por resultado.</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="content-section alt" id="trajetoria">
-            <div class="container section-shell">
-                <div class="section-heading reveal">
-                    <span class="section-kicker">Trajetória</span>
-                    <h2>Uma linha de crescimento com presença constante.</h2>
-                </div>
-
-                <div class="timeline">
-                    <article class="timeline-item reveal">
-                        <span class="timeline-year">2012</span>
-                        <h3>Primeiro mandato</h3>
-                        <p>Entrada na Câmara com atuação marcada por presença pública e escuta da comunidade.</p>
-                    </article>
-                    <article class="timeline-item reveal">
-                        <span class="timeline-year">2016</span>
-                        <h3>Reeleição</h3>
-                        <p>Ampliação da votação e consolidação como nome de referência em São Lourenço do Sul.</p>
-                    </article>
-                    <article class="timeline-item reveal">
-                        <span class="timeline-year">2020</span>
-                        <h3>Terceiro mandato</h3>
-                        <p>Continuidade do trabalho com foco em infraestrutura, apoio social e presença pública.</p>
-                    </article>
-                    <article class="timeline-item highlight reveal">
-                        <span class="timeline-year">2026</span>
-                        <h3>Nova etapa estadual</h3>
-                        <p>Pré-candidatura estadual com compromisso de ampliar voz, articulação e capacidade de entrega.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="content-section" id="propostas">
-            <div class="container section-shell">
-                <div class="section-heading reveal">
-                    <span class="section-kicker">Projetos</span>
-                    <h2>Frentes de atuação que apontam prioridades claras para o mandato.</h2>
-                </div>
-
-                <div class="proposal-grid">
-                    <article class="proposal-card reveal">
-                        <div class="proposal-icon"><i class="fas fa-road"></i></div>
-                        <h3>Presença nas ruas</h3>
-                        <p>Ouvir, visitar, acompanhar e cobrar solução onde a comunidade mais precisa.</p>
-                    </article>
-                    <article class="proposal-card reveal">
-                        <div class="proposal-icon"><i class="fas fa-people-carry-box"></i></div>
-                        <h3>Articulação política</h3>
-                        <p>Unir forças, abrir portas e buscar recursos para transformar demanda em resultado.</p>
-                    </article>
-                    <article class="proposal-card reveal">
-                        <div class="proposal-icon"><i class="fas fa-bullhorn"></i></div>
-                        <h3>Tom de liderança</h3>
-                        <p>Firmeza na posição, clareza na palavra e responsabilidade com cada compromisso assumido.</p>
-                    </article>
-                </div>
-
-                <div class="showcase-grid" id="presenca">
-                    <article class="showcase-card statement-card reveal">
-                        <div class="campaign-header-copy">
-                            <span class="section-kicker">Assinatura</span>
-                            <h3>Resultados que reforçam presença, confiança e liderança.</h3>
-                            <p>Entregas que mostram compromisso com a comunidade e capacidade de buscar apoio para causas importantes.</p>
-                        </div>
-
-                        <div class="campaign-header">
-                            <div class="campaign-header-right">
-                                <img src="images/Nova pasta/616625061_26292093920393624_3989429203033621395_n.jpg" alt="Material de campanha com apoio ao Grupo Rosas Guerreiras">
-                                <img src="images/Nova pasta/618087862_26348983984704617_600323106609032264_n.jpg" alt="Material de campanha sobre investimento na Escolinha Infantil Mundo Encantado">
-                                <img src="images/Nova pasta/618139978_26357469763856039_5874208149195043546_n.jpg" alt="Material de campanha com apoio à APAE">
-                                <img src="images/Nova pasta/619168252_26319076037695412_7930153125228108755_n.jpg" alt="Material de campanha sobre apoio à Associação dos Apicultores de São Lourenço do Sul">
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer" id="contato">
-        <div class="container footer-shell reveal">
-            <div class="footer-branding">
-                <div class="brand footer-brand">
-                    <span class="brand-top">Paulinho</span>
-                    <span class="brand-bottom">Pereira</span>
-                </div>
-                <p>Trabalho sério, proximidade com as pessoas e compromisso com São Lourenço do Sul e o Rio Grande do Sul.</p>
-            </div>
-
-            <div class="footer-links">
-                <a href="https://www.instagram.com/paulinhosspereira/" target="_blank" rel="noreferrer">
-                    <i class="fab fa-instagram"></i> Instagram
-                </a>
-                <a href="https://www.facebook.com/paulinho.pereira.18" target="_blank" rel="noreferrer">
-                    <i class="fab fa-facebook-f"></i> Facebook
-                </a>
-                <a href="https://radiolitoralsulfm.com.br/" target="_blank" rel="noreferrer">
-                    <i class="fas fa-broadcast-tower"></i> Rádio Litoral Sul
-                </a>
-            </div>
-
-            <div class="footer-note">
-                <p>São Lourenço do Sul, RS</p>
-                <p>Pré-candidatura 2026 • trabalho, respeito e compromisso público</p>
-            </div>
-        </div>
-    </footer>
-
-    <div class="floating-social" id="floatingSocial">
-        <div class="floating-social-links" id="floatingSocialLinks">
-            <a href="https://www.instagram.com/paulinhosspereira/" target="_blank" rel="noreferrer" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-                <span>Instagram</span>
-            </a>
-            <a href="https://www.facebook.com/paulinho.pereira.18" target="_blank" rel="noreferrer" aria-label="Facebook">
-                <i class="fab fa-facebook-f"></i>
-                <span>Facebook</span>
-            </a>
-            <a href="https://radiolitoralsulfm.com.br/" target="_blank" rel="noreferrer" aria-label="Rádio Litoral Sul">
-                <i class="fas fa-broadcast-tower"></i>
-                <span>Rádio</span>
-            </a>
-        </div>
-        <button class="floating-social-toggle" id="floatingSocialToggle" type="button" aria-expanded="false" aria-label="Abrir redes sociais">
-            <i class="fas fa-share-alt"></i>
-        </button>
+  <!-- ═══════════════════════════════════════
+       BARRA DO PARTIDO
+  ═══════════════════════════════════════ -->
+  <div class="barra-partido">
+    <div class="container">
+      <div class="partido-item">
+        <span class="dot"></span>
+        Partido Podemos — PODE
+      </div>
+      <div class="partido-item">
+        <span class="dot"></span>
+        Deputado Estadual · Rio Grande do Sul · 2026
+      </div>
+      <div class="partido-item">
+        Número de urna:
+        <span class="barra-numero">XXXXX</span>
+      </div>
     </div>
+  </div>
 
-    <script src="js/main.js"></script>
+  <!-- ═══════════════════════════════════════
+       NAVEGAÇÃO
+  ═══════════════════════════════════════ -->
+  <nav class="nav" id="topo">
+    <div class="container">
+      <a href="#topo" class="nav-logo">
+        <img src="images/PODEMOS simbolo.jpg" alt="Logo Podemos" />
+        <div class="nav-logo-texto">
+          <span class="nav-logo-nome">Paulinho Pereira</span>
+          <span class="nav-logo-cargo">Deputado Estadual RS · 2026</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#prioridades">Prioridades</a></li>
+        <li><a href="#trajetoria">Trajetória</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#presenca">Presença</a></li>
+        <li><a href="#depoimentos">Apoiadores</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════ -->
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="hero-texto">
+        <div class="hero-badge">Pré-candidato a Deputado Estadual · RS 2026</div>
+
+        <h1>
+          Trabalho firme para defender quem move o
+          <em>Rio Grande do Sul.</em>
+        </h1>
+
+        <p class="hero-sub">
+          Uma trajetória construída nas ruas, no diálogo com a comunidade e na busca
+          de soluções concretas para São Lourenço do Sul e para todo o Estado.
+        </p>
+
+        <div class="hero-btns">
+          <a href="#trajetoria" class="btn-primario">Conheça a trajetória</a>
+        </div>
+
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-num">3</div>
+            <div class="hero-stat-label">Mandatos<br>de vereador</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">12+</div>
+            <div class="hero-stat-label">Anos de<br>presença pública</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">2026</div>
+            <div class="hero-stat-label">Nova etapa<br>estadual</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Foto do candidato -->
+      <div class="hero-foto-wrap">
+        <div class="hero-foto-fundo"></div>
+        <img
+          src="images/FOTO DE PERFIL.jpg"
+          alt="Paulinho Pereira - Candidato a Deputado Estadual RS"
+          class="hero-foto"
+        />
+        <!-- Selo partido -->
+        <div class="hero-partido-selo">
+          <img src="images/PODEMOS simbolo.jpg" alt="Partido Podemos" />
+          <div class="hero-partido-info">
+            <strong>Podemos · PODE</strong>
+            <span>Dep. Estadual · RS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SOBRE
+  ═══════════════════════════════════════ -->
+  <section class="secao" id="sobre">
+    <div class="container">
+      <div class="sobre-grid">
+        <div class="sobre-foto reveal">
+          <img
+            src="images/FOTO INSTAGRAM PEQUENA.jpg"
+            alt="Paulinho Pereira em atividade pública"
+          />
+          <div class="sobre-foto-badge">
+            <strong>12+</strong>
+            anos de presença<br>no serviço público
+          </div>
+        </div>
+
+        <div class="sobre-texto">
+          <span class="label-secao">Sobre o candidato</span>
+          <h2>Uma caminhada feita com coragem, palavra e presença.</h2>
+          <p>
+            Paulinho Pereira é um político formado nas ruas de São Lourenço do Sul.
+            Três mandatos como vereador construíram uma trajetória marcada por presença constante
+            na comunidade, diálogo com as lideranças e entrega de resultados reais para quem
+            mais precisa.
+          </p>
+          <p>
+            Agora, em 2026, Paulinho dá um passo adiante e busca uma cadeira na
+            Assembleia Legislativa do Rio Grande do Sul, pelo Partido Podemos (PODE),
+            levando para o estado a mesma energia, comprometimento e firmeza que
+            marcaram sua atuação municipal.
+          </p>
+          <p>
+            <em>"Política séria se faz com presença, palavra e responsabilidade com quem confia no trabalho."</em>
+          </p>
+
+          <div class="sobre-valores">
+            <span class="tag-valor">Trabalho</span>
+            <span class="tag-valor">Transparência</span>
+            <span class="tag-valor">Respeito</span>
+            <span class="tag-valor">Comunidade</span>
+            <span class="tag-valor">Presença real</span>
+            <span class="tag-valor">São Lourenço do Sul</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PRIORIDADES
+  ═══════════════════════════════════════ -->
+  <section class="secao secao-cinza" id="prioridades">
+    <div class="container">
+      <div class="secao-header">
+        <span class="label-secao">Prioridades</span>
+        <h2>Quatro frentes para um mandato presente e útil.</h2>
+        <p>Objetivos claros para defender a população, fortalecer serviços e ampliar oportunidades no Rio Grande do Sul.</p>
+      </div>
+
+      <div class="prioridades-grid">
+        <div class="prioridade-card reveal">
+          <div class="prioridade-num">01</div>
+          <div class="prioridade-icon">🏥</div>
+          <h3>Saúde mais próxima</h3>
+          <p>Buscar recursos, apoio institucional e melhoria do atendimento para quem mais precisa. Saúde de qualidade não pode ser privilégio.</p>
+        </div>
+        <div class="prioridade-card reveal reveal-delay-1">
+          <div class="prioridade-num">02</div>
+          <div class="prioridade-icon">🏗️</div>
+          <h3>Infraestrutura que funciona</h3>
+          <p>Defender investimentos em mobilidade, pavimentação e obras que melhoram a vida real das pessoas no interior do RS.</p>
+        </div>
+        <div class="prioridade-card reveal reveal-delay-2">
+          <div class="prioridade-num">03</div>
+          <div class="prioridade-icon">🤝</div>
+          <h3>Apoio ao social</h3>
+          <p>Fortalecer entidades, projetos comunitários e ações que protegem famílias, ampliam dignidade e geram inclusão.</p>
+        </div>
+        <div class="prioridade-card reveal reveal-delay-3">
+          <div class="prioridade-num">04</div>
+          <div class="prioridade-icon">📋</div>
+          <h3>Articulação por resultado</h3>
+          <p>Construir diálogo com lideranças e instituições para transformar demanda em entrega concreta para o povo gaúcho.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       TRAJETÓRIA
+  ═══════════════════════════════════════ -->
+  <section class="secao" id="trajetoria">
+    <div class="container">
+      <div class="secao-header">
+        <span class="label-secao">Trajetória</span>
+        <h2>Uma linha de crescimento com presença constante.</h2>
+        <p>Mais de uma década construindo relações, entregando resultados e crescendo com a comunidade.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-ano">2012</div>
+          <div class="timeline-dot"><span></span></div>
+          <div class="timeline-conteudo">
+            <span class="timeline-badge">Primeiro mandato</span>
+            <h3>Entrada na Câmara Municipal</h3>
+            <p>Atuação marcada por presença pública, escuta ativa da comunidade e compromisso com São Lourenço do Sul desde o primeiro dia.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-ano">2016</div>
+          <div class="timeline-dot"><span></span></div>
+          <div class="timeline-conteudo">
+            <span class="timeline-badge">Reeleição</span>
+            <h3>Ampliação da votação e da liderança</h3>
+            <p>Crescimento expressivo na votação e consolidação como nome de referência em São Lourenço do Sul. A comunidade ratificou o trabalho.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-ano">2020</div>
+          <div class="timeline-dot"><span></span></div>
+          <div class="timeline-conteudo">
+            <span class="timeline-badge">Terceiro mandato</span>
+            <h3>Continuidade com foco em entregas</h3>
+            <p>Terceiro mandato consecutivo com foco em infraestrutura, apoio social e articulação para buscar recursos estaduais e federais.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-ano">2026</div>
+          <div class="timeline-dot"><span></span></div>
+          <div class="timeline-conteudo">
+            <span class="timeline-badge">Nova etapa estadual</span>
+            <h3>Deputado Estadual pelo RS — Podemos</h3>
+            <p>Pré-candidatura à Assembleia Legislativa do RS pelo Partido Podemos (PODE), com compromisso de ampliar voz, articulação e capacidade de entrega para toda a região sul.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PROJETOS
+  ═══════════════════════════════════════ -->
+  <section class="secao secao-azul" id="projetos">
+    <div class="container">
+      <div class="secao-header">
+        <span class="label-secao">Projetos</span>
+        <h2>Frentes de atuação para o mandato.</h2>
+        <p>Prioridades claras que guiam cada ação, cada visita e cada articulação política.</p>
+      </div>
+
+      <div class="propostas-grid">
+        <div class="proposta-card reveal">
+          <div class="proposta-icon">🚶</div>
+          <h3>Presença nas ruas</h3>
+          <p>Ouvir, visitar, acompanhar e cobrar solução onde a comunidade mais precisa. O mandato começa na porta do eleitor.</p>
+        </div>
+        <div class="proposta-card reveal reveal-delay-1">
+          <div class="proposta-icon">🔗</div>
+          <h3>Articulação política</h3>
+          <p>Unir forças, abrir portas e buscar recursos para transformar demanda em resultado. Política se faz com diálogo.</p>
+        </div>
+        <div class="proposta-card reveal reveal-delay-2">
+          <div class="proposta-icon">🌾</div>
+          <h3>Apoio ao interior gaúcho</h3>
+          <p>Defender os municípios do interior, a agricultura familiar e as comunidades que movem o Rio Grande do Sul.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PRESENÇA / GALERIA
+  ═══════════════════════════════════════ -->
+  <section class="secao secao-cinza" id="presenca">
+    <div class="container">
+      <div class="secao-header">
+        <span class="label-secao">Presença</span>
+        <h2>Presença pública com credibilidade e conexão real.</h2>
+        <p>Ações, entregas e articulações que mostram compromisso com a comunidade na prática.</p>
+      </div>
+
+      <div class="galeria-grid">
+        <div class="galeria-item reveal">
+          <img
+            src="images/Nova pasta/616625061_26292093920393624_3989429203033621395_n.jpg"
+            alt="Apoio ao Grupo Rosas Guerreiras"
+            loading="lazy"
+          />
+          <div class="galeria-legenda">Apoio ao Grupo Rosas Guerreiras</div>
+        </div>
+        <div class="galeria-item reveal reveal-delay-1">
+          <img
+            src="images/Nova pasta/618087862_26348983984704617_600323106609032264_n.jpg"
+            alt="Investimento na Escolinha Infantil Mundo Encantado"
+            loading="lazy"
+          />
+          <div class="galeria-legenda">Escolinha Infantil Mundo Encantado</div>
+        </div>
+        <div class="galeria-item reveal reveal-delay-2">
+          <img
+            src="images/Nova pasta/618139978_26357469763856039_5874208149195043546_n.jpg"
+            alt="Apoio à APAE"
+            loading="lazy"
+          />
+          <div class="galeria-legenda">Apoio à APAE de São Lourenço do Sul</div>
+        </div>
+        <div class="galeria-item reveal reveal-delay-3">
+          <img
+            src="images/Nova pasta/619168252_26319076037695412_7930153125228108755_n.jpg"
+            alt="Apoio à Associação dos Apicultores"
+            loading="lazy"
+          />
+          <div class="galeria-legenda">Associação dos Apicultores de São Lourenço do Sul</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       DEPOIMENTOS
+  ═══════════════════════════════════════ -->
+  <section class="secao" id="depoimentos">
+    <div class="container">
+      <div class="secao-header">
+        <span class="label-secao">Apoiadores</span>
+        <h2>Quem caminha com o Paulinho.</h2>
+        <p>Pessoas da nossa comunidade que conhecem o trabalho de perto e acreditam nessa candidatura.</p>
+      </div>
+
+      <div class="depoimentos-grid">
+        <!-- Substitua por depoimentos reais da sua comunidade -->
+        <div class="depoimento-card reveal">
+          <p class="depoimento-texto">
+            O Paulinho é um vereador que realmente aparece. Quando precisamos de apoio para
+            nossa entidade, ele estava lá. Esse tipo de presença faz diferença.
+          </p>
+          <div class="depoimento-autor">
+            <div class="depoimento-avatar">MA</div>
+            <div class="depoimento-info">
+              <strong>Representante da APAE</strong>
+              <span>São Lourenço do Sul, RS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="depoimento-card reveal reveal-delay-1">
+          <p class="depoimento-texto">
+            Sempre que trouxemos demandas da nossa associação, ele não só ouviu, como foi atrás
+            de soluções. É o tipo de político que a gente pode chamar.
+          </p>
+          <div class="depoimento-autor">
+            <div class="depoimento-avatar">RG</div>
+            <div class="depoimento-info">
+              <strong>Liderança comunitária</strong>
+              <span>São Lourenço do Sul, RS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="depoimento-card reveal reveal-delay-2">
+          <p class="depoimento-texto">
+            Três mandatos e a gente vê o resultado. Não é palanque, é trabalho de verdade.
+            Por isso vou levar meu voto pro deputado estadual em 2026.
+          </p>
+          <div class="depoimento-autor">
+            <div class="depoimento-avatar">JP</div>
+            <div class="depoimento-info">
+              <strong>Produtor rural</strong>
+              <span>São Lourenço do Sul, RS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CTA FAIXA
+  ═══════════════════════════════════════ -->
+  <div class="cta-faixa">
+    <div class="container">
+      <div>
+        <h2>Siga o Paulinho nas redes sociais.</h2>
+        <p>Acompanhe as ações, visitas e articulações da campanha em tempo real.</p>
+      </div>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="https://www.instagram.com/paulinhosspereira/" target="_blank" rel="noopener" class="btn-branco">
+          📸 Instagram
+        </a>
+        <a href="https://www.facebook.com/paulinho.pereira.18" target="_blank" rel="noopener" class="btn-branco">
+          👍 Facebook
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       CONTATO / APOIO
+  ═══════════════════════════════════════ -->
+  <section class="secao secao-cinza" id="contato">
+    <div class="container">
+      <div class="apoio-grid">
+        <div class="apoio-info reveal">
+          <span class="label-secao">Faça parte</span>
+          <h2>Quero apoiar o Paulinho.</h2>
+          <p>
+            Sua participação é fundamental para levar essa candidatura ao Rio Grande do Sul.
+            Preencha o formulário ou entre em contato direto — toda ajuda conta.
+          </p>
+
+          <div class="apoio-canais">
+            <a href="https://www.instagram.com/paulinhosspereira/" target="_blank" rel="noopener" class="canal-item">
+              <div class="canal-icon azul">📸</div>
+              <div>
+                <strong>@paulinhosspereira</strong><br>
+                <span style="font-size:13px;color:var(--cinza-3);">Instagram</span>
+              </div>
+            </a>
+            <a href="https://www.facebook.com/paulinho.pereira.18" target="_blank" rel="noopener" class="canal-item">
+              <div class="canal-icon azul">👍</div>
+              <div>
+                <strong>Paulinho Pereira</strong><br>
+                <span style="font-size:13px;color:var(--cinza-3);">Facebook</span>
+              </div>
+            </a>
+            <a href="https://radiolitoralsulfm.com.br/" target="_blank" rel="noopener" class="canal-item">
+              <div class="canal-icon verde">📻</div>
+              <div>
+                <strong>Rádio Litoral Sul</strong><br>
+                <span style="font-size:13px;color:var(--cinza-3);">São Lourenço do Sul, RS</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="form-card reveal reveal-delay-1">
+          <h3>Quero apoiar esta candidatura</h3>
+          <p class="form-sub">Preencha seus dados e a equipe do Paulinho entrará em contato.</p>
+
+          <form id="form-apoio" novalidate>
+            <div class="form-row">
+              <div class="form-grupo">
+                <label for="nome">Nome completo *</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+              </div>
+              <div class="form-grupo">
+                <label for="cidade">Cidade / Bairro *</label>
+                <input type="text" id="cidade" name="cidade" placeholder="Ex: São Lourenço do Sul" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-grupo">
+                <label for="telefone">WhatsApp / Telefone *</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(53) 9XXXX-XXXX" required />
+              </div>
+              <div class="form-grupo">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" />
+              </div>
+            </div>
+
+            <div class="form-grupo">
+              <label for="como">Como posso ajudar a campanha?</label>
+              <select id="como" name="como">
+                <option value="">Selecione uma opção</option>
+                <option>Quero ser voluntário</option>
+                <option>Quero divulgar nas redes sociais</option>
+                <option>Quero colocar material na minha casa/comércio</option>
+                <option>Quero contribuir financeiramente</option>
+                <option>Tenho uma sugestão de pauta</option>
+                <option>Só quero acompanhar</option>
+              </select>
+            </div>
+
+            <div class="form-grupo">
+              <label for="mensagem">Mensagem (opcional)</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Conta pra nós o que você acha importante..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-form">Quero fazer parte desta campanha →</button>
+            <div class="form-msg" id="form-msg">
+              ✅ Mensagem enviada! A equipe do Paulinho entrará em contato em breve. Obrigado pelo apoio!
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       RODAPÉ
+  ═══════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Paulinho <span>Pereira</span></div>
+          <p class="footer-desc">
+            Trabalho sério, proximidade com as pessoas e compromisso com
+            São Lourenço do Sul e o Rio Grande do Sul. Pré-candidato a Deputado
+            Estadual pelo Partido Podemos (PODE) em 2026.
+          </p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/paulinhosspereira/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" width="18" height="18" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.facebook.com/paulinho.pereira.18" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <a href="#sobre">Sobre</a>
+          <a href="#prioridades">Prioridades</a>
+          <a href="#trajetoria">Trajetória</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#presenca">Presença</a>
+          <a href="#depoimentos">Apoiadores</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <a href="https://www.instagram.com/paulinhosspereira/" target="_blank" rel="noopener">@paulinhosspereira</a>
+          <a href="https://www.facebook.com/paulinho.pereira.18" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://radiolitoralsulfm.com.br/" target="_blank" rel="noopener">Rádio Litoral Sul</a>
+          <a href="#contato">Formulário de apoio</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025–2026 Paulinho Pereira. São Lourenço do Sul, RS.</span>
+        <div class="podemos-badge">
+          <img src="images/PODEMOS simbolo.jpg" alt="Podemos" />
+          Partido Podemos · PODE · Pré-candidatura 2026
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- ═══════════════════════════════════════
+       JAVASCRIPT
+  ═══════════════════════════════════════ -->
+  <script>
+    /* ---- Menu hamburguer ---- */
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('aberto');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('aberto'));
+    });
+
+    /* ---- Scroll reveal ---- */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    /* ---- Formulário de apoio ---- */
+    const form    = document.getElementById('form-apoio');
+    const formMsg = document.getElementById('form-msg');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nome     = document.getElementById('nome').value.trim();
+      const cidade   = document.getElementById('cidade').value.trim();
+      const telefone = document.getElementById('telefone').value.trim();
+
+      if (!nome || !cidade || !telefone) {
+        alert('Por favor, preencha os campos obrigatórios: Nome, Cidade e Telefone.');
+        return;
+      }
+
+      formMsg.style.display = 'block';
+      form.reset();
+      setTimeout(() => { formMsg.style.display = 'none'; }, 7000);
+    });
+
+    /* ---- Nav ativo no scroll ---- */
+    const sections = document.querySelectorAll('section[id], div[id]');
+    const navItems = document.querySelectorAll('.nav-links a[href^="#"]');
+
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navItems.forEach(a => {
+            a.style.color = '';
+            a.style.fontWeight = '';
+            if (a.getAttribute('href') === `#${id}`) {
+              a.style.color = 'var(--azul)';
+              a.style.fontWeight = '700';
+            }
+          });
+        }
+      });
+    }, { threshold: 0.4 });
+
+    sections.forEach(s => navObserver.observe(s));
+  </script>
+
 </body>
 </html>

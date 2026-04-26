@@ -1,0 +1,9 @@
+{
+  "profile": "openai",
+  "env": {
+    "OPENAI_BASE_URL": "https://openrouter.ai/api/v1",
+    "OPENAI_MODEL": "google/gemma-4-31b-it:free",
+    "OPENAI_API_KEY": "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"
+  },
+  "createdAt": "2026-04-26T12:41:00.592Z"
+}
