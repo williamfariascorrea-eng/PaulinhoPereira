@@ -401,17 +401,19 @@
       border-radius: 50%;
     }
 
-    .hero-foto {
-      position: relative;
-      z-index: 2;
-      width: 340px;
-      height: 420px;
-      object-fit: cover;
-      object-position: center top;
-      border-radius: var(--raio) var(--raio) 0 0;
-      border: 3px solid rgba(0,165,80,0.4);
-      box-shadow: var(--sombra-lg);
-    }
+.hero-foto {
+  position: relative;
+  z-index: 2;
+  width: 340px;
+  height: 420px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--raio) var(--raio) 0 0;
+  border: 3px solid rgba(0,165,80,0.4);
+  box-shadow: var(--sombra-lg);
+  transition: transform .15s ease-out;
+  will-change: transform;
+}
 
     /* Selo partido flutuante */
     .hero-partido-selo {
@@ -1095,6 +1097,104 @@ BOTÃO WHATSAPP FLUTUANTE
   50% { box-shadow: 0 4px 30px rgba(37,211,102,0.7); }
 }
 
+/* ═══════════════════════════════════════
+LOADER INICIAL
+═══════════════════════════════════════ */
+.loader-wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--azul);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .6s, visibility .6s;
+}
+
+.loader-wrap.escondido {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  animation: loader-pulse 1.2s ease-in-out infinite;
+  margin-bottom: 1.5rem;
+}
+
+.loader-barra {
+  width: 200px;
+  height: 4px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.loader-barra-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--verde);
+  border-radius: 4px;
+  animation: loader-fill 1.5s ease-in-out forwards;
+}
+
+.loader-texto {
+  margin-top: 1rem;
+  color: rgba(255,255,255,0.6);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+@keyframes loader-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 0.8; }
+}
+
+@keyframes loader-fill {
+  0% { width: 0%; }
+  60% { width: 75%; }
+  100% { width: 100%; }
+}
+
+/* ═══════════════════════════════════════
+BARRA DE PROGRESSO DE LEITURA
+═══════════════════════════════════════ */
+.progresso-leitura {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--verde), var(--azul-medio));
+  z-index: 9998;
+  width: 0%;
+  transition: width .1s linear;
+}
+
+/* ═══════════════════════════════════════
+DIVISORES DECORATIVOS (ONDAS)
+═══════════════════════════════════════ */
+.divisor-onda {
+  display: block;
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.divisor-onda svg {
+  display: block;
+  width: 100%;
+  height: 50px;
+}
+
+.divisor-onda-claro { background: var(--cinza-f); }
+.divisor-onda-branco { background: var(--branco); }
+.divisor-onda-azul { background: var(--azul); }
+
     /* ═══════════════════════════════════════
        RODAPÉ
     ═══════════════════════════════════════ */
@@ -1254,9 +1354,21 @@ BOTÃO WHATSAPP FLUTUANTE
 
 <body>
 
-  <!-- ═══════════════════════════════════════
-       BARRA DO PARTIDO
-  ═══════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════
+LOADER
+═══════════════════════════════════════ -->
+<div class="loader-wrap" id="loader">
+  <img src="images/PODEMOS simbolo.jpg" alt="Carregando..." class="loader-logo" />
+  <div class="loader-barra"><div class="loader-barra-fill"></div></div>
+  <div class="loader-texto">Carregando...</div>
+</div>
+
+<!-- Barra de progresso de leitura -->
+<div class="progresso-leitura" id="progresso-leitura"></div>
+
+<!-- ═══════════════════════════════════════
+BARRA DO PARTIDO
+═══════════════════════════════════════ -->
   <div class="barra-partido">
     <div class="container">
       <div class="partido-item">
@@ -1325,20 +1437,20 @@ BOTÃO WHATSAPP FLUTUANTE
           <a href="#trajetoria" class="btn-primario">Conheça a trajetória</a>
         </div>
 
-        <div class="hero-stats">
-          <div>
-            <div class="hero-stat-num">3</div>
-            <div class="hero-stat-label">Mandatos<br>de vereador</div>
-          </div>
-          <div>
-            <div class="hero-stat-num">12+</div>
-            <div class="hero-stat-label">Anos de<br>presença pública</div>
-          </div>
-          <div>
-            <div class="hero-stat-num">2026</div>
-            <div class="hero-stat-label">Nova etapa<br>estadual</div>
-          </div>
-        </div>
+  <div class="hero-stats">
+                <div>
+                    <div class="hero-stat-num" data-count="3">0</div>
+                    <div class="hero-stat-label">Mandatos<br>de vereador</div>
+                </div>
+                <div>
+                    <div class="hero-stat-num" data-count="12" data-suffix="+">0</div>
+                    <div class="hero-stat-label">Anos de<br>presença pública</div>
+                </div>
+                <div>
+                    <div class="hero-stat-num" data-count="2026" data-speed="2000">0</div>
+                    <div class="hero-stat-label">Nova etapa<br>estadual</div>
+                </div>
+            </div>
       </div>
 
       <!-- Foto do candidato -->
@@ -1359,11 +1471,16 @@ BOTÃO WHATSAPP FLUTUANTE
         </div>
       </div>
     </div>
-  </section>
+</section>
 
-  <!-- ═══════════════════════════════════════
-       SOBRE
-  ═══════════════════════════════════════ -->
+<!-- divisor onda: hero → branco -->
+<div class="divisor-onda" style="background:var(--azul);">
+  <svg viewBox="0 0 1200 50" preserveAspectRatio="none"><path d="M0,25 C300,55 900,0 1200,25 L1200,50 L0,50Z" fill="var(--branco)"/></svg>
+</div>
+
+<!-- ═══════════════════════════════════════
+SOBRE
+═══════════════════════════════════════ -->
   <section class="secao" id="sobre">
     <div class="container">
       <div class="sobre-grid">
@@ -1411,11 +1528,16 @@ BOTÃO WHATSAPP FLUTUANTE
         </div>
       </div>
     </div>
-  </section>
+</section>
 
-  <!-- ═══════════════════════════════════════
-       PRIORIDADES
-  ═══════════════════════════════════════ -->
+<!-- divisor onda: branco → cinza -->
+<div class="divisor-onda divisor-onda-branco">
+  <svg viewBox="0 0 1200 50" preserveAspectRatio="none"><path d="M0,25 C300,55 900,0 1200,25 L1200,50 L0,50Z" fill="var(--cinza-f)"/></svg>
+</div>
+
+<!-- ═══════════════════════════════════════
+PRIORIDADES
+═══════════════════════════════════════ -->
   <section class="secao secao-cinza" id="prioridades">
     <div class="container">
       <div class="secao-header">
@@ -1451,11 +1573,16 @@ BOTÃO WHATSAPP FLUTUANTE
         </div>
       </div>
     </div>
-  </section>
+</section>
 
-  <!-- ═══════════════════════════════════════
-       TRAJETÓRIA
-  ═══════════════════════════════════════ -->
+<!-- divisor onda: cinza → branco -->
+<div class="divisor-onda divisor-onda-claro">
+  <svg viewBox="0 0 1200 50" preserveAspectRatio="none"><path d="M0,25 C300,0 900,55 1200,25 L1200,50 L0,50Z" fill="var(--branco)"/></svg>
+</div>
+
+<!-- ═══════════════════════════════════════
+TRAJETÓRIA
+═══════════════════════════════════════ -->
   <section class="secao" id="trajetoria">
     <div class="container">
       <div class="secao-header">
@@ -1506,11 +1633,16 @@ BOTÃO WHATSAPP FLUTUANTE
         </div>
       </div>
     </div>
-  </section>
+</section>
 
-  <!-- ═══════════════════════════════════════
-       PROJETOS
-  ═══════════════════════════════════════ -->
+<!-- divisor onda: branco → azul -->
+<div class="divisor-onda divisor-onda-branco">
+  <svg viewBox="0 0 1200 50" preserveAspectRatio="none"><path d="M0,25 C200,50 400,0 600,25 C800,50 1000,0 1200,25 L1200,50 L0,50Z" fill="var(--azul)"/></svg>
+</div>
+
+<!-- ═══════════════════════════════════════
+PROJETOS
+═══════════════════════════════════════ -->
   <section class="secao secao-azul" id="projetos">
     <div class="container">
       <div class="secao-header">
@@ -1537,11 +1669,16 @@ BOTÃO WHATSAPP FLUTUANTE
         </div>
       </div>
     </div>
-  </section>
+</section>
 
-  <!-- ═══════════════════════════════════════
-       PRESENÇA / GALERIA
-  ═══════════════════════════════════════ -->
+<!-- divisor onda: azul → cinza -->
+<div class="divisor-onda divisor-onda-azul">
+  <svg viewBox="0 0 1200 50" preserveAspectRatio="none"><path d="M0,25 C300,55 900,0 1200,25 L1200,50 L0,50Z" fill="var(--cinza-f)"/></svg>
+</div>
+
+<!-- ═══════════════════════════════════════
+PRESENÇA / GALERIA
+═══════════════════════════════════════ -->
   <section class="secao secao-cinza" id="presenca">
     <div class="container">
       <div class="secao-header">
@@ -1585,11 +1722,16 @@ BOTÃO WHATSAPP FLUTUANTE
         </div>
       </div>
     </div>
-  </section>
+</section>
 
-  <!-- ═══════════════════════════════════════
-       DEPOIMENTOS
-  ═══════════════════════════════════════ -->
+<!-- divisor onda: cinza → branco -->
+<div class="divisor-onda divisor-onda-claro">
+  <svg viewBox="0 0 1200 50" preserveAspectRatio="none"><path d="M0,25 C300,0 900,55 1200,25 L1200,50 L0,50Z" fill="var(--branco)"/></svg>
+</div>
+
+<!-- ═══════════════════════════════════════
+DEPOIMENTOS
+═══════════════════════════════════════ -->
   <section class="secao" id="depoimentos">
     <div class="container">
       <div class="secao-header">
@@ -1805,7 +1947,65 @@ BOTÃO WHATSAPP FLUTUANTE
 JAVASCRIPT
 ═══════════════════════════════════════ -->
   <script>
-    /* ---- Menu hamburguer ---- */
+    /* ---- Loader inicial ---- */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('escondido');
+  }, 1800);
+});
+
+/* ---- Barra de progresso de leitura ---- */
+const barraProgresso = document.getElementById('progresso-leitura');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  barraProgresso.style.width = pct + '%';
+}, { passive: true });
+
+/* ---- Contador animado nos stats do hero ---- */
+function animarContador(el) {
+  const target = parseInt(el.getAttribute('data-count'), 10);
+  const suffix = el.getAttribute('data-suffix') || '';
+  const speed = parseInt(el.getAttribute('data-speed'), 10) || 1200;
+  const start = 0;
+  const duration = speed;
+  const startTime = performance.now();
+
+  function update(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = Math.floor(start + (target - start) * eased);
+    el.textContent = current + suffix;
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animarContador(entry.target);
+      statsObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.hero-stat-num[data-count]').forEach(el => statsObserver.observe(el));
+
+/* ---- Parallax na foto do hero ---- */
+const heroFoto = document.querySelector('.hero-foto');
+if (heroFoto) {
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y < window.innerHeight) {
+      heroFoto.style.transform = 'translateY(' + (y * 0.12) + 'px)';
+    }
+  }, { passive: true });
+}
+
+/* ---- Menu hamburguer ---- */
     const hamburger = document.getElementById('hamburger');
     const navLinks  = document.getElementById('nav-links');
 
