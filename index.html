@@ -34,7 +34,7 @@
 
   <style>
     /* ═══════════════════════════════════════
-       RESET & VARIÁVEIS
+       AJUSTES INICIAIS E CORES
     ═══════════════════════════════════════ */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -223,7 +223,7 @@
     }
 
     /* ═══════════════════════════════════════
-       HERO
+       APRESENTAÇÃO / INÍCIO
     ═══════════════════════════════════════ */
     .hero {
       background: linear-gradient(135deg, var(--azul) 0%, #001a5c 100%);
@@ -1008,7 +1008,7 @@
     }
 
     /* ═══════════════════════════════════════
-       FAIXA CTA
+       FAIXA DE DESTAQUE
     ═══════════════════════════════════════ */
     .cta-faixa {
       background: linear-gradient(135deg, var(--verde) 0%, #009044 100%);
@@ -1098,7 +1098,7 @@ BOTÃO WHATSAPP FLUTUANTE
 }
 
 /* ═══════════════════════════════════════
-LOADER INICIAL
+TELA DE CARREGAMENTO
 ═══════════════════════════════════════ */
 .loader-wrap {
   position: fixed;
@@ -1294,7 +1294,7 @@ DIVISORES DECORATIVOS (ONDAS)
 
 
     /* ═══════════════════════════════════════
-       ANIMAÇÕES SCROLL
+       ANIMAÇÕES AO ROLAR
     ═══════════════════════════════════════ */
     .reveal {
       opacity: 0;
@@ -1313,7 +1313,7 @@ DIVISORES DECORATIVOS (ONDAS)
     .reveal-delay-4 { transition-delay: .32s; }
 
     /* ═══════════════════════════════════════
-       MOBILE
+       CELULAR
     ═══════════════════════════════════════ */
     @media (max-width: 900px) {
       .nav-links { display: none; flex-direction: column; gap: 0; }
@@ -1784,7 +1784,8 @@ DEPOIMENTOS
           </div>
         </div>
       </div>
-</footer>
+    </section>
+
     <div class="container">
       <section class="secao secao-cinza" id="contato">
         <div class="apoio-grid">
@@ -1873,8 +1874,8 @@ DEPOIMENTOS
           </form>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <!-- ═══════════════════════════════════════
        RODAPÉ
@@ -1946,132 +1947,7 @@ BOTÃO WHATSAPP FLUTUANTE
 <!-- ═══════════════════════════════════════
 JAVASCRIPT
 ═══════════════════════════════════════ -->
-  <script>
-    /* ---- Loader inicial ---- */
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    document.getElementById('loader').classList.add('escondido');
-  }, 1800);
-});
-
-/* ---- Barra de progresso de leitura ---- */
-const barraProgresso = document.getElementById('progresso-leitura');
-window.addEventListener('scroll', () => {
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-  barraProgresso.style.width = pct + '%';
-}, { passive: true });
-
-/* ---- Contador animado nos stats do hero ---- */
-function animarContador(el) {
-  const target = parseInt(el.getAttribute('data-count'), 10);
-  const suffix = el.getAttribute('data-suffix') || '';
-  const speed = parseInt(el.getAttribute('data-speed'), 10) || 1200;
-  const start = 0;
-  const duration = speed;
-  const startTime = performance.now();
-
-  function update(currentTime) {
-    const elapsed = currentTime - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const current = Math.floor(start + (target - start) * eased);
-    el.textContent = current + suffix;
-    if (progress < 1) requestAnimationFrame(update);
-  }
-  requestAnimationFrame(update);
-}
-
-const statsObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      animarContador(entry.target);
-      statsObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('.hero-stat-num[data-count]').forEach(el => statsObserver.observe(el));
-
-/* ---- Parallax na foto do hero ---- */
-const heroFoto = document.querySelector('.hero-foto');
-if (heroFoto) {
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    if (y < window.innerHeight) {
-      heroFoto.style.transform = 'translateY(' + (y * 0.12) + 'px)';
-    }
-  }, { passive: true });
-}
-
-/* ---- Menu hamburguer ---- */
-    const hamburger = document.getElementById('hamburger');
-    const navLinks  = document.getElementById('nav-links');
-
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('aberto');
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('aberto'));
-    });
-
-    /* ---- Scroll reveal ---- */
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    /* ---- Formulário de apoio ---- */
-    const form    = document.getElementById('form-apoio');
-    const formMsg = document.getElementById('form-msg');
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const nome     = document.getElementById('nome').value.trim();
-      const cidade   = document.getElementById('cidade').value.trim();
-      const telefone = document.getElementById('telefone').value.trim();
-
-      if (!nome || !cidade || !telefone) {
-        alert('Por favor, preencha os campos obrigatórios: Nome, Cidade e Telefone.');
-        return;
-      }
-
-      formMsg.style.display = 'block';
-      form.reset();
-      setTimeout(() => { formMsg.style.display = 'none'; }, 7000);
-    });
-
-    /* ---- Nav ativo no scroll ---- */
-    const sections = document.querySelectorAll('section[id], div[id]');
-    const navItems = document.querySelectorAll('.nav-links a[href^="#"]');
-
-    const navObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          navItems.forEach(a => {
-            a.style.color = '';
-            a.style.fontWeight = '';
-            if (a.getAttribute('href') === `#${id}`) {
-              a.style.color = 'var(--azul)';
-              a.style.fontWeight = '700';
-            }
-          });
-        }
-      });
-    }, { threshold: 0.4 });
-
-    sections.forEach(s => navObserver.observe(s));
-  </script>
+  <script src="js/main.js"></script>
 
 </body>
 </html>
