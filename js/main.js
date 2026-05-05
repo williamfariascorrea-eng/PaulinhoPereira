@@ -99,17 +99,26 @@ formulario.addEventListener('submit', (e) => {
     return;
   }
 
-  // Monta mensagem para WhatsApp
-  let texto = `*Novo apoio via site!*%0A`;
-  texto += `👤 *Nome:* ${nome}%0A`;
-  texto += `📍 *Cidade:* ${cidade}%0A`;
-  texto += `📞 *Telefone:* ${telefone}%0A`;
-  if (email) texto += `📧 *E-mail:* ${email}%0A`;
-  if (como) texto += `🤝 *Como quer ajudar:* ${como}%0A`;
-  if (mensagem) texto += `💬 *Mensagem:* ${mensagem}%0A`;
+  // Monta mensagem para WhatsApp (formatada e profissional)
+  let texto = `*🗳️ NOVO APOIO - Paulinho Pereira 2026*%0A%0A`;
+  texto += `━━━━━━━━━━━━━━━━━━━━%0A%0A`;
+  texto += `*👤 Nome:*%0A${nome}%0A%0A`;
+  texto += `*📍 Cidade/Bairro:*%0A${cidade}%0A%0A`;
+  texto += `*📞 WhatsApp:*%0A${telefone}%0A`;
+  if (email) {
+    texto += `%0A*📧 E-mail:*%0A${email}`;
+  }
+  if (como) {
+    texto += `%0A%0A*🤝 Como pode ajudar:*%0A${como}`;
+  }
+  if (mensagem) {
+    texto += `%0A%0A*💬 Mensagem:*%0A${mensagem}`;
+  }
+  texto += `%0A%0A━━━━━━━━━━━━━━━━━━━━%0A`;
+  texto += `*Enviado via site de campanha*`;
 
-  // Abre WhatsApp com a mensagem
-  window.open(`https://wa.me/5553999999999?text=${texto}`, '_blank');
+  // Abre WhatsApp com a mensagem (número fake para teste - substituir pelo número real)
+  window.open(`https://wa.me/5553912345678?text=${texto}`, '_blank');
 
   msgForm.style.display = 'block';
   formulario.reset();
