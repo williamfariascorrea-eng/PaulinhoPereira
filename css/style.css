@@ -67,7 +67,7 @@
 
     .barra-partido .container {
       display: flex;
-      align-items: center;
+      align-items: start;
       justify-content: center;
       gap: 2rem;
       flex-wrap: wrap;
@@ -75,7 +75,7 @@
 
     .barra-partido .partido-item {
       display: flex;
-      align-items: center;
+      align-items: start;
       gap: 8px;
       opacity: 0.95;
     }
@@ -113,14 +113,14 @@
     .nav .container {
       height: 100%;
       display: flex;
-      align-items: center;
+      align-items: start;
       justify-content: space-between;
       gap: 1rem;
     }
 
     .nav-logo {
       display: flex;
-      align-items: center;
+      align-items: start;
       gap: 12px;
     }
 
@@ -152,7 +152,7 @@
 
     .nav-links {
       display: flex;
-      align-items: center;
+      align-items: start;
       gap: 0.25rem;
     }
 
@@ -198,7 +198,7 @@
       background: linear-gradient(135deg, #0a1f4a 0%, #003087 35%, #001538 70%, #0d2847 100%);
       min-height: calc(100vh - var(--nav-h) - 34px);
       display: flex;
-      align-items: center;
+      align-items: start;
       overflow: hidden;
       position: relative;
     }
@@ -232,7 +232,7 @@
       z-index: 2;
       display: grid;
       grid-template-columns: 1fr 420px;
-      align-items: center;
+      align-items: start;
       gap: 4rem;
       padding-top: 4rem;
       padding-bottom: 4rem;
@@ -240,7 +240,7 @@
 
     .hero-badge {
       display: inline-flex;
-      align-items: center;
+      align-items: start;
       gap: 10px;
       background: linear-gradient(135deg, rgba(0,165,80,0.2) 0%, rgba(0,100,50,0.25) 100%);
       border: 1px solid rgba(0,165,80,0.5);
@@ -293,7 +293,7 @@
 
     .btn-primario {
       display: inline-flex;
-      align-items: center;
+      align-items: start;
       gap: 10px;
       background: linear-gradient(135deg, var(--verde) 0%, #008a4a 100%);
       color: #fff;
@@ -314,7 +314,7 @@
 
     .btn-secundario {
       display: inline-flex;
-      align-items: center;
+      align-items: start;
       gap: 8px;
       background: rgba(255,255,255,0.1);
       border: 1px solid rgba(255,255,255,0.3);
@@ -338,7 +338,7 @@
 
     .link-acao {
       display: inline-flex;
-      align-items: center;
+      align-items: start;
       justify-content: center;
       color: var(--azul);
       font-weight: 700;
@@ -429,7 +429,7 @@
       padding: 12px 16px;
       box-shadow: var(--sombra-lg);
       display: flex;
-      align-items: center;
+      align-items: start;
       gap: 10px;
       z-index: 5;
     }
@@ -560,7 +560,7 @@
 
     .secao-cta {
       display: flex;
-      align-items: center;
+      align-items: start;
       justify-content: center;
       gap: 1rem;
       flex-wrap: wrap;
@@ -858,7 +858,7 @@
 
     .depoimento-autor {
       display: flex;
-      align-items: center;
+      align-items: start;
       gap: 12px;
     }
 
@@ -870,7 +870,7 @@
       font-size: 16px;
       font-weight: 700;
       display: flex;
-      align-items: center;
+      align-items: start;
       justify-content: center;
       flex-shrink: 0;
     }
@@ -917,7 +917,7 @@
 
     .canal-item {
       display: flex;
-      align-items: center;
+      align-items: start;
       gap: 14px;
       padding: 14px 18px;
       border-radius: var(--raio-sm);
@@ -939,7 +939,7 @@
       width: 40px; height: 40px;
       border-radius: var(--raio-sm);
       display: flex;
-      align-items: center;
+      align-items: start;
       justify-content: center;
       font-size: 20px;
       flex-shrink: 0;
@@ -1066,7 +1066,7 @@
       display: grid;
       grid-template-columns: .85fr 1.15fr;
       gap: 3rem;
-      align-items: center;
+      align-items: start;
     }
 
     .gabinete-info {
@@ -1144,7 +1144,7 @@
       display: grid;
       grid-template-columns: 1.1fr .9fr;
       gap: 3rem;
-      align-items: center;
+      align-items: start;
     }
 
     .visao-texto h2 {
@@ -1203,7 +1203,7 @@
 
     .cta-faixa .container {
       display: flex;
-      align-items: center;
+      align-items: start;
       justify-content: space-between;
       gap: 2rem;
       flex-wrap: wrap;
@@ -1225,7 +1225,7 @@
 
     .btn-branco {
       display: inline-flex;
-      align-items: center;
+      align-items: start;
       gap: 10px;
       background: #fff;
       color: var(--verde);
@@ -1252,7 +1252,7 @@ BOTÃO WHATSAPP FLUTUANTE
   right: 24px;
   z-index: 999;
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 10px;
   background: #25D366;
   color: #fff;
@@ -1293,7 +1293,7 @@ TELA DE CARREGAMENTO
   background: var(--azul);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   transition: opacity .6s, visibility .6s;
 }
@@ -1420,7 +1420,7 @@ DIVISORES DECORATIVOS (ONDAS)
 
     .social-btn {
       display: flex;
-      align-items: center;
+      align-items: start;
       justify-content: center;
       width: 38px; height: 38px;
       border-radius: 50%;
@@ -1457,7 +1457,7 @@ DIVISORES DECORATIVOS (ONDAS)
       padding-top: 1.5rem;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: start;
       flex-wrap: wrap;
       gap: 1rem;
       font-size: 13px;
@@ -1465,7 +1465,7 @@ DIVISORES DECORATIVOS (ONDAS)
 
     .footer-bottom .podemos-badge {
       display: flex;
-      align-items: center;
+      align-items: start;
       gap: 8px;
       color: rgba(255,255,255,0.7);
     }
@@ -2150,7 +2150,7 @@ DIVISORES DECORATIVOS (ONDAS)
      
      .nav-links a {
        display: flex;
-       align-items: center;
+       align-items: start;
      }
      
      .galeria-item {
@@ -2197,7 +2197,7 @@ DIVISORES DECORATIVOS (ONDAS)
   border: none;
   cursor: pointer;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   box-shadow: 0 4px 16px rgba(0,48,135,0.3);
   opacity: 0;
@@ -2232,7 +2232,7 @@ DIVISORES DECORATIVOS (ONDAS)
   z-index: 10000;
   background: rgba(0,0,0,0.92);
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   opacity: 0;
   visibility: hidden;
@@ -2271,7 +2271,7 @@ DIVISORES DECORATIVOS (ONDAS)
   font-size: 24px;
   cursor: pointer;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   transition: background .2s;
 }
@@ -2405,7 +2405,7 @@ DIVISORES DECORATIVOS (ONDAS)
   font-size: 2rem !important;
   margin-bottom: 1rem !important;
   display: inline-flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   width: 56px;
   height: 56px;
