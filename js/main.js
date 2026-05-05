@@ -1,8 +1,9 @@
 /* ---- Tela de carregamento ---- */
 window.addEventListener('load', () => {
-  setTimeout(() => {
+  // Hide loader as soon as the page has fully loaded
+  requestAnimationFrame(() => {
     document.getElementById('loader').classList.add('escondido');
-  }, 1800);
+  });
 });
 
 /* ---- Barra de progresso ---- */
