@@ -62,10 +62,22 @@ const linksNav = document.getElementById('nav-links');
 
 botaoMenu.addEventListener('click', () => {
   linksNav.classList.toggle('aberto');
+  botaoMenu.classList.toggle('aberto');
 });
 
 document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => linksNav.classList.remove('aberto'));
+  link.addEventListener('click', () => {
+    linksNav.classList.remove('aberto');
+    botaoMenu.classList.remove('aberto');
+  });
+});
+
+// Fechar menu ao clicar fora
+document.addEventListener('click', (e) => {
+  if (!botaoMenu.contains(e.target) && !linksNav.contains(e.target)) {
+    linksNav.classList.remove('aberto');
+    botaoMenu.classList.remove('aberto');
+  }
 });
 
 /* ---- Aparecer ao rolar ---- */

@@ -1312,44 +1312,653 @@ DIVISORES DECORATIVOS (ONDAS)
     .reveal-delay-3 { transition-delay: .24s; }
     .reveal-delay-4 { transition-delay: .32s; }
 
-    /* ═══════════════════════════════════════
-       CELULAR
-    ═══════════════════════════════════════ */
-    @media (max-width: 900px) {
-      .nav-links { display: none; flex-direction: column; gap: 0; }
-      .nav-links.aberto {
-        display: flex;
-        position: absolute;
-        top: var(--nav-h);
-        left: 0; right: 0;
-        background: #fff;
-        border-bottom: 1px solid var(--cinza-1);
-        padding: 1rem;
-        z-index: 99;
-      }
-      .nav-links.aberto a { padding: 12px 16px; border-radius: var(--raio-sm); }
-      .hamburger { display: flex; }
-      .hero .container { grid-template-columns: 1fr; text-align: center; }
-      .hero-btns { justify-content: center; }
-      .hero-stats { justify-content: center; }
-      .sobre-grid  { grid-template-columns: 1fr; }
-      .apoio-grid  { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .form-row    { grid-template-columns: 1fr; }
-  .whatsapp-float span { display: none; }
-  .whatsapp-float { padding: 16px; border-radius: 50%; }
-  .whatsapp-float svg { width: 28px; height: 28px; }
-    }
+/* ═══════════════════════════════════════
+       RESPONSIVO AVANÇADO - TABLET E DESKTOP
+   ═══════════════════════════════════════ */
+   @media (max-width: 1024px) {
+     .hero .container {
+       grid-template-columns: 1fr;
+       gap: 2rem;
+       text-align: center;
+       padding-top: 2rem;
+       padding-bottom: 2rem;
+     }
+     
+     .hero-texto {
+       order: 2;
+     }
+     
+     .hero-foto-wrap {
+       order: 1;
+       margin: 0 auto;
+     }
+     
+     .hero-foto {
+       width: min(280px, 70vw);
+       margin: 0 auto;
+     }
+     
+     .hero-partido-selo {
+       right: 50%;
+       transform: translateX(50%);
+       bottom: 20px;
+     }
+     
+     .hero-stats {
+       justify-content: center;
+       flex-wrap: wrap;
+     }
+     
+     .hero-btns {
+       justify-content: center;
+     }
+     
+     .hero-sub {
+       margin-left: auto;
+       margin-right: auto;
+     }
+     
+     .apoio-grid {
+       grid-template-columns: 1fr;
+       gap: 2rem;
+     }
+     
+     .form-card {
+       margin-top: 2rem;
+     }
+     
+     .footer-grid {
+       grid-template-columns: 1fr 1fr;
+       gap: 2rem;
+     }
+     
+     .footer-grid > div:first-child {
+       grid-column: 1 / -1;
+     }
+   }
 
-    @media (max-width: 600px) {
-      .barra-partido .container { gap: 0.75rem; font-size: 11px; }
-      .hero h1 { font-size: 2rem; }
-      .cta-faixa .container { flex-direction: column; text-align: center; }
-      .secao { padding: 3.5rem 0; }
-      .timeline::before { left: 50px; }
-      .timeline-ano { min-width: 36px; font-size: 1rem; }
-      .countdown-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-    }
+   /* ═══════════════════════════════════════
+       RESPONSIVO - CELULAR (até 768px)
+   ═══════════════════════════════════════ */
+   @media (max-width: 768px) {
+     /* Base */
+     html {
+       font-size: 15px;
+     }
+     
+     .container {
+       padding: 0 1.25rem;
+     }
+     
+     /* Barra partido - compacta */
+     .barra-partido {
+       padding: 6px 0;
+     }
+     
+     .barra-partido .container {
+       flex-direction: column;
+       gap: 4px;
+       text-align: center;
+     }
+     
+     .barra-partido .partido-item {
+       font-size: 10px;
+     }
+     
+     .barra-numero {
+       font-size: 11px;
+       padding: 2px 10px;
+     }
+     
+     /* Navegação */
+     .nav {
+       height: 60px;
+     }
+     
+     :root {
+       --nav-h: 60px;
+     }
+     
+     .nav-logo img {
+       height: 32px;
+       width: 32px;
+     }
+     
+     .nav-logo-nome {
+       font-size: 14px;
+     }
+     
+     .nav-logo-cargo {
+       font-size: 9px;
+     }
+     
+     /* Menu mobile */
+     .nav-links {
+       display: none;
+       flex-direction: column;
+       gap: 0;
+       position: absolute;
+       top: var(--nav-h);
+       left: 0;
+       right: 0;
+       background: #fff;
+       border-bottom: 1px solid var(--cinza-1);
+       padding: 0.5rem;
+       z-index: 99;
+       box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+       max-height: calc(100vh - var(--nav-h));
+       overflow-y: auto;
+     }
+     
+     .nav-links.aberto {
+       display: flex;
+       animation: slideDown 0.3s ease;
+     }
+     
+     @keyframes slideDown {
+       from { opacity: 0; transform: translateY(-10px); }
+       to { opacity: 1; transform: translateY(0); }
+     }
+     
+     .nav-links a {
+       padding: 14px 16px;
+       font-size: 15px;
+       border-radius: 8px;
+       display: block;
+     }
+     
+     .nav-links a:active {
+       background: var(--azul-claro);
+     }
+     
+     .hamburger {
+       display: flex;
+       padding: 8px;
+     }
+     
+     .hamburger span {
+       width: 22px;
+       height: 2px;
+     }
+     
+     .hamburger.aberto span:nth-child(1) {
+       transform: rotate(45deg) translate(5px, 5px);
+     }
+     
+     .hamburger.aberto span:nth-child(2) {
+       opacity: 0;
+     }
+     
+     .hamburger.aberto span:nth-child(3) {
+       transform: rotate(-45deg) translate(5px, -5px);
+     }
+     
+     /* Hero */
+     .hero {
+       min-height: auto;
+       padding: 2rem 0;
+     }
+     
+     .hero-badge {
+       font-size: 10px;
+       padding: 5px 12px;
+       margin-bottom: 1rem;
+     }
+     
+     .hero h1 {
+       font-size: 1.75rem;
+       line-height: 1.2;
+       margin-bottom: 1rem;
+     }
+     
+     .hero-sub {
+       font-size: 0.95rem;
+       margin-bottom: 1.5rem;
+     }
+     
+     .hero-btns {
+       flex-direction: column;
+       gap: 0.75rem;
+     }
+     
+     .btn-primario {
+       width: 100%;
+       justify-content: center;
+       padding: 14px 24px;
+       font-size: 14px;
+     }
+     
+     .hero-stats {
+       margin-top: 1.5rem;
+       padding-top: 1.5rem;
+       gap: 1.25rem;
+     }
+     
+     .hero-stat-num {
+       font-size: 1.5rem;
+     }
+     
+     .hero-stat-label {
+       font-size: 10px;
+     }
+     
+     /* Divisores */
+     .divisor-onda svg {
+       height: 35px;
+     }
+     
+     /* Seções */
+     .secao {
+       padding: 3rem 0;
+     }
+     
+     .secao-header {
+       margin-bottom: 2rem;
+     }
+     
+     .secao-header h2 {
+       font-size: 1.5rem;
+     }
+     
+     .secao-header p {
+       font-size: 0.95rem;
+     }
+     
+     /* Sobre */
+     .frase-destaque {
+       font-size: 1rem !important;
+       padding: 1rem;
+       text-align: left;
+     }
+     
+     .sobre-valores {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       gap: 8px;
+     }
+     
+     .tag-valor {
+       font-size: 11px;
+       padding: 6px 12px;
+     }
+     
+     /* Prioridades */
+     .prioridades-grid {
+       grid-template-columns: 1fr;
+       gap: 1rem;
+     }
+     
+     .prioridade-card {
+       padding: 1.25rem;
+     }
+     
+     .prioridade-card h3 {
+       font-size: 0.95rem;
+     }
+     
+     /* Timeline */
+     .timeline {
+       padding-left: 0;
+     }
+     
+     .timeline::before {
+       left: 20px;
+     }
+     
+     .timeline-item {
+       flex-direction: column;
+       gap: 0.5rem;
+       padding-left: 40px;
+       margin-bottom: 1.5rem;
+     }
+     
+     .timeline-ano {
+       position: absolute;
+       left: 45px;
+       top: 0;
+       min-width: auto;
+       font-size: 0.85rem;
+     }
+     
+     .timeline-dot {
+       position: absolute;
+       left: 12px;
+     }
+     
+     .timeline-conteudo {
+       padding: 1rem;
+     }
+     
+     .timeline-conteudo h3 {
+       font-size: 0.95rem;
+     }
+     
+     .timeline-conteudo p {
+       font-size: 0.85rem;
+     }
+     
+     /* Projetos */
+     .propostas-grid {
+       grid-template-columns: 1fr;
+       gap: 1rem;
+     }
+     
+     .proposta-card {
+       padding: 1.25rem;
+     }
+     
+     .proposta-card h3 {
+       font-size: 0.95rem;
+     }
+     
+     /* Galeria */
+     .galeria-grid {
+       grid-template-columns: 1fr;
+       gap: 1rem;
+     }
+     
+     .galeria-item img {
+       height: 200px;
+     }
+     
+     .galeria-legenda {
+       font-size: 12px;
+       padding: 2rem 1rem 1rem;
+     }
+     
+     /* Depoimentos */
+     .depoimentos-grid {
+       grid-template-columns: 1fr;
+       gap: 1rem;
+     }
+     
+     .depoimento-card {
+       padding: 1.25rem;
+     }
+     
+     .depoimento-texto {
+       font-size: 0.9rem;
+     }
+     
+     /* Contato / Formulário */
+     .apoio-canais {
+       gap: 10px;
+     }
+     
+     .canal-item {
+       padding: 12px;
+       font-size: 13px;
+     }
+     
+     .canal-icon {
+       width: 36px;
+       height: 36px;
+       font-size: 18px;
+     }
+     
+     .form-card {
+       padding: 1.5rem;
+     }
+     
+     .form-card h3 {
+       font-size: 1.25rem;
+     }
+     
+     .form-row {
+       grid-template-columns: 1fr;
+       gap: 0.75rem;
+     }
+     
+     .form-grupo {
+       margin-bottom: 1rem;
+     }
+     
+     .form-grupo input,
+     .form-grupo select,
+     .form-grupo textarea {
+       padding: 12px;
+       font-size: 15px;
+     }
+     
+     /* Prevenir zoom em inputs no iOS */
+     .form-grupo input[type="text"],
+     .form-grupo input[type="email"],
+     .form-grupo input[type="tel"],
+     .form-grupo select,
+     .form-grupo textarea {
+       font-size: 16px;
+     }
+     
+     .btn-form {
+       padding: 14px;
+       font-size: 15px;
+     }
+     
+     /* Contagem regressiva */
+     .countdown-secao {
+       padding: 2.5rem 0;
+     }
+     
+     .countdown-secao h2 {
+       font-size: 1.25rem;
+     }
+     
+     .countdown-secao p {
+       font-size: 0.9rem;
+     }
+     
+     .countdown-grid {
+       grid-template-columns: repeat(2, 1fr);
+       gap: 0.75rem;
+     }
+     
+     .countdown-item {
+       padding: 1.25rem 0.75rem;
+     }
+     
+     .countdown-num {
+       font-size: 1.75rem;
+     }
+     
+     .countdown-label {
+       font-size: 10px;
+     }
+     
+     /* Footer */
+     footer {
+       padding: 2.5rem 0 1.5rem;
+     }
+     
+     .footer-grid {
+       grid-template-columns: 1fr;
+       gap: 1.5rem;
+     }
+     
+     .footer-logo {
+       font-size: 1.25rem;
+     }
+     
+     .footer-desc {
+       font-size: 13px;
+     }
+     
+     .footer-col h4 {
+       margin-bottom: 0.75rem;
+     }
+     
+     .footer-bottom {
+       flex-direction: column;
+       text-align: center;
+       gap: 0.75rem;
+     }
+     
+     .footer-bottom .podemos-badge {
+       font-size: 12px;
+     }
+     
+     /* WhatsApp flutuante */
+     .whatsapp-float {
+       bottom: 20px;
+       right: 16px;
+       padding: 14px;
+       border-radius: 50%;
+     }
+     
+     .whatsapp-float span {
+       display: none;
+     }
+     
+     .whatsapp-float svg {
+       width: 26px;
+       height: 26px;
+     }
+     
+     /* Botão topo */
+     .btn-topo {
+       bottom: 80px;
+       right: 16px;
+       width: 44px;
+       height: 44px;
+     }
+     
+     /* Lightbox */
+     .lightbox-fechar {
+       top: 16px;
+       right: 16px;
+       width: 40px;
+       height: 40px;
+       font-size: 20px;
+     }
+     
+     .lightbox img {
+       max-width: 95vw;
+       max-height: 70vh;
+     }
+     
+     .lightbox-legenda {
+       bottom: 16px;
+       font-size: 12px;
+     }
+     
+     /* Loader */
+     .loader-logo {
+       width: 60px;
+       height: 60px;
+     }
+     
+     .loader-barra {
+       width: 160px;
+     }
+     
+     /* Animação reveal - mais rápida no mobile */
+     .reveal {
+       transition-duration: 0.4s;
+     }
+   }
+
+   /* ═══════════════════════════════════════
+       CELULAR PEQUENO (até 400px)
+   ═══════════════════════════════════════ */
+   @media (max-width: 400px) {
+     html {
+       font-size: 14px;
+     }
+     
+     .hero h1 {
+       font-size: 1.5rem;
+     }
+     
+     .hero-badge {
+       font-size: 9px;
+     }
+     
+     .hero-stat-num {
+       font-size: 1.25rem;
+     }
+     
+     .countdown-item {
+       padding: 1rem 0.5rem;
+     }
+     
+     .countdown-num {
+       font-size: 1.5rem;
+     }
+   }
+
+   /* ═══════════════════════════════════════
+       ORIENTACAO PAISAGEM NO MOBILE
+   ═══════════════════════════════════════ */
+   @media (max-height: 500px) and (orientation: landscape) {
+     .hero {
+       min-height: auto;
+       padding: 1.5rem 0;
+     }
+     
+     .hero .container {
+       gap: 1rem;
+     }
+     
+     .hero h1 {
+       font-size: 1.25rem;
+       margin-bottom: 0.5rem;
+     }
+     
+     .hero-sub {
+       font-size: 0.85rem;
+       margin-bottom: 1rem;
+     }
+     
+     .hero-stats {
+       margin-top: 1rem;
+       padding-top: 1rem;
+     }
+     
+     .hero-stat-num {
+       font-size: 1.25rem;
+     }
+   }
+
+   /* ═══════════════════════════════════════
+       TOUCH SCREEN - AREAS CLICAVEIS MAIORES
+   ═══════════════════════════════════════ */
+   @media (hover: none) and (pointer: coarse) {
+     a, button, .nav-links a, .galeria-item {
+       min-height: 44px;
+     }
+     
+     .nav-links a {
+       display: flex;
+       align-items: center;
+     }
+     
+     .galeria-item {
+       cursor: pointer;
+     }
+     
+     .prioridade-card:hover,
+     .proposta-card:hover,
+     .depoimento-card:hover {
+       transform: none;
+     }
+     
+     .btn-primario:hover,
+     .btn-secundario:hover {
+       transform: none;
+     }
+   }
+
+   /* ═══════════════════════════════════════
+       AJUSTES DE PERFORMANCE
+   ═══════════════════════════════════════ */
+   @media (prefers-reduced-motion: reduce) {
+     *, *::before, *::after {
+       animation-duration: 0.01ms !important;
+       animation-iteration-count: 1 !important;
+       transition-duration: 0.01ms !important;
+       scroll-behavior: auto !important;
+     }
+   }
 
 /* ═══════════════════════════════════════
    BOTÃO VOLTAR AO TOPO
@@ -1635,11 +2244,4 @@ DIVISORES DECORATIVOS (ONDAS)
   animation: hero-gradient 12s ease infinite;
 }
 
-/* ═══════════════════════════════════════
-   RESPONSIVO NOVAS FEATURES
-═══════════════════════════════════════ */
-@media (max-width: 900px) {
-  .btn-topo { bottom: 90px; right: 16px; }
-  .countdown-grid { max-width: 100%; }
-  .propostas-grid { grid-template-columns: 1fr !important; }
-}
+
