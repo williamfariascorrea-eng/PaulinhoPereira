@@ -92,50 +92,46 @@ const observadorAparecer = new IntersectionObserver((entradas) => {
 
 document.querySelectorAll('.reveal').forEach(el => observadorAparecer.observe(el));
 
-/* ---- Formulário de apoio (envia via WhatsApp) ---- */
+/* ---- Gabinete Digital (envia via WhatsApp) ---- */
 const formulario = document.getElementById('form-apoio');
 const msgForm = document.getElementById('form-msg');
+let acaoFormulario = 'Preciso de ajuda';
 
-formulario.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  const nome = document.getElementById('nome').value.trim();
-  const cidade = document.getElementById('cidade').value.trim();
-  const telefone = document.getElementById('telefone').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const como = document.getElementById('como').value;
-  const mensagem = document.getElementById('mensagem').value.trim();
-
-  if (!nome || !cidade || !telefone) {
-    alert('Preencha os campos obrigatórios: Nome, Cidade e Telefone.');
-    return;
-  }
-
-  // Monta mensagem para WhatsApp (formatada e profissional)
-  let texto = `*🗳️ NOVO APOIO - Paulinho Pereira 2026*%0A%0A`;
-  texto += `━━━━━━━━━━━━━━━━━━━━%0A%0A`;
-  texto += `*👤 Nome:*%0A${nome}%0A%0A`;
-  texto += `*📍 Cidade/Bairro:*%0A${cidade}%0A%0A`;
-  texto += `*📞 WhatsApp:*%0A${telefone}%0A`;
-  if (email) {
-    texto += `%0A*📧 E-mail:*%0A${email}`;
-  }
-  if (como) {
-    texto += `%0A%0A*🤝 Como pode ajudar:*%0A${como}`;
-  }
-  if (mensagem) {
-    texto += `%0A%0A*💬 Mensagem:*%0A${mensagem}`;
-  }
-  texto += `%0A%0A━━━━━━━━━━━━━━━━━━━━%0A`;
-  texto += `*Enviado via site de campanha*`;
-
-  // Abre WhatsApp com a mensagem (número fake para teste - substituir pelo número real)
-  window.open(`https://wa.me/5553912345678?text=${texto}`, '_blank');
-
-  msgForm.style.display = 'block';
-  formulario.reset();
-  setTimeout(() => { msgForm.style.display = 'none'; }, 7000);
+document.querySelectorAll('#form-apoio button[type="submit"][data-acao]').forEach(botao => {
+  botao.addEventListener('click', () => {
+    acaoFormulario = botao.dataset.acao || acaoFormulario;
+  });
 });
+
+if (formulario) {
+  formulario.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const nome = document.getElementById('nome').value.trim();
+    const bairro = document.getElementById('bairro').value.trim();
+    const mensagem = document.getElementById('mensagem').value.trim();
+
+    if (!nome || !bairro || !mensagem) {
+      alert('Preencha os campos obrigatórios: Nome, Bairro e Problema ou sugestão.');
+      return;
+    }
+
+    const texto = encodeURIComponent(
+      `*GABINETE DIGITAL - Paulinho Pereira*\n\n` +
+      `*Tipo:* ${acaoFormulario}\n` +
+      `*Nome:* ${nome}\n` +
+      `*Bairro/localidade:* ${bairro}\n\n` +
+      `*Problema ou sugestão:*\n${mensagem}\n\n` +
+      `Enviado pelo site oficial.`
+    );
+
+    window.open(`https://wa.me/5553912345678?text=${texto}`, '_blank');
+
+    msgForm.style.display = 'block';
+    formulario.reset();
+    setTimeout(() => { msgForm.style.display = 'none'; }, 7000);
+  });
+}
 
 /* ---- Destacar link ativo no menu (com classe CSS) ---- */
 const secoes = document.querySelectorAll('section[id]');

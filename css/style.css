@@ -5,10 +5,13 @@
 
     :root {
       --azul:       #003087;
+      --azul-profundo:#071b3f;
       --azul-medio: #004db3;
       --azul-claro: #e8eef8;
       --verde:      #00A550;
       --verde-claro:#e6f5ee;
+      --ouro:       #d6a83a;
+      --ouro-claro: #fff4d2;
       --branco:     #ffffff;
       --cinza-f:    #f7f8fa;
       --cinza-1:    #e8eaee;
@@ -328,6 +331,27 @@
       transform: translateY(-2px);
     }
 
+    .btn-compacto {
+      padding: 12px 22px;
+      font-size: 14px;
+    }
+
+    .link-acao {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--azul);
+      font-weight: 700;
+      border-bottom: 2px solid var(--ouro);
+      padding-bottom: 2px;
+    }
+
+    .secao-azul .link-acao,
+    .movimento-card .link-acao {
+      color: #fff;
+      border-bottom-color: var(--ouro);
+    }
+
     .hero-stats {
       display: flex;
       gap: 2rem;
@@ -532,6 +556,19 @@
       background: var(--azul);
       color: #fff;
       transform: translateY(-2px);
+    }
+
+    .secao-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .secao-cta-centro {
+      margin-top: 2.5rem;
     }
 
     /* ═══════════════════════════════════════
@@ -1007,6 +1044,155 @@
       margin-top: 1rem;
     }
 
+    /* Gabinete digital e movimento */
+    .gabinete-secao {
+      background:
+        linear-gradient(135deg, var(--azul-profundo) 0%, var(--azul) 62%, #06325f 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gabinete-secao::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(214,168,58,0.12), transparent 45%, rgba(0,165,80,0.12));
+      pointer-events: none;
+    }
+
+    .gabinete-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .gabinete-info {
+      color: #fff;
+    }
+
+    .gabinete-info h3 {
+      font-family: var(--fonte-titulo);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .gabinete-info p {
+      color: rgba(255,255,255,0.76);
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .gabinete-passos {
+      display: grid;
+      gap: .75rem;
+    }
+
+    .gabinete-passos span {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-left: 4px solid var(--ouro);
+      border-radius: var(--raio-sm);
+      padding: 12px 14px;
+      font-weight: 700;
+    }
+
+    .form-card-escuro {
+      margin-top: 0;
+      border-top-color: var(--ouro);
+      box-shadow: 0 22px 60px rgba(0,0,0,0.25);
+    }
+
+    .form-acoes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .75rem;
+    }
+
+    .form-acoes .btn-form {
+      border-radius: var(--raio-sm);
+      min-height: 54px;
+      padding: 12px 10px;
+      line-height: 1.15;
+    }
+
+    .btn-form-alerta {
+      background: var(--azul);
+      box-shadow: 0 4px 16px rgba(0,48,135,0.25);
+    }
+
+    .btn-form-alerta:hover {
+      background: #00266f;
+      box-shadow: 0 8px 24px rgba(0,48,135,0.32);
+    }
+
+    .btn-form-ouro {
+      background: var(--ouro);
+      color: var(--azul-profundo);
+      box-shadow: 0 4px 16px rgba(214,168,58,0.32);
+    }
+
+    .btn-form-ouro:hover {
+      background: #c89827;
+      box-shadow: 0 8px 24px rgba(214,168,58,0.42);
+    }
+
+    .visao-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .visao-texto h2 {
+      font-family: var(--fonte-titulo);
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.12;
+      color: var(--azul);
+      margin-bottom: 1rem;
+    }
+
+    .visao-texto p {
+      color: var(--cinza-3);
+      font-size: 1.06rem;
+      margin-bottom: 1rem;
+    }
+
+    .movimento-card {
+      background: linear-gradient(145deg, var(--azul-profundo), var(--azul));
+      color: #fff;
+      border-radius: var(--raio);
+      padding: clamp(1.5rem, 4vw, 2.5rem);
+      box-shadow: var(--sombra-lg);
+      border: 1px solid rgba(214,168,58,0.32);
+    }
+
+    .movimento-card span {
+      display: inline-flex;
+      color: var(--ouro-claro);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: .75rem;
+    }
+
+    .movimento-card h3 {
+      font-family: var(--fonte-titulo);
+      font-size: clamp(1.45rem, 3vw, 2.15rem);
+      line-height: 1.15;
+      margin-bottom: 1.4rem;
+    }
+
+    .movimento-card .btn-primario {
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
     /* ═══════════════════════════════════════
        FAIXA DE DESTAQUE
     ═══════════════════════════════════════ */
@@ -1366,6 +1552,16 @@ DIVISORES DECORATIVOS (ONDAS)
      .form-card {
        margin-top: 2rem;
      }
+
+     .gabinete-grid,
+     .visao-grid {
+       grid-template-columns: 1fr;
+       gap: 2rem;
+     }
+
+     .gabinete-info {
+       text-align: center;
+     }
      
      .footer-grid {
        grid-template-columns: 1fr 1fr;
@@ -1527,6 +1723,14 @@ DIVISORES DECORATIVOS (ONDAS)
        padding: 14px 24px;
        font-size: 14px;
      }
+
+     .hero-btns .btn-secundario,
+     .secao-cta .btn-primario,
+     .secao-cta .link-acao {
+       width: 100%;
+       justify-content: center;
+       text-align: center;
+     }
      
      .hero-stats {
        margin-top: 1.5rem;
@@ -1638,6 +1842,23 @@ DIVISORES DECORATIVOS (ONDAS)
        font-size: 0.85rem;
      }
      
+     /* Gabinete digital */
+     .gabinete-info {
+       text-align: left;
+     }
+
+     .gabinete-passos {
+       gap: .6rem;
+     }
+
+     .form-acoes {
+       grid-template-columns: 1fr;
+     }
+
+     .movimento-card .btn-primario {
+       width: 100%;
+     }
+
      /* Projetos */
      .propostas-grid {
        grid-template-columns: 1fr;
@@ -2243,5 +2464,3 @@ DIVISORES DECORATIVOS (ONDAS)
   background-size: 400% 400% !important;
   animation: hero-gradient 12s ease infinite;
 }
-
-
