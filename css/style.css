@@ -192,50 +192,33 @@
     }
 
     /* ═══════════════════════════════════════
-       APRESENTAÇÃO / INÍCIO
-    ═══════════════════════════════════════ */
+APRESENTAÇÃO / INÍCIO
+     ═══════════════════════════════════════ */
     .hero {
-      background: linear-gradient(135deg, #0a1f4a 0%, #003087 35%, #001538 70%, #0d2847 100%);
+      background: var(--azul);
       min-height: calc(100vh - var(--nav-h) - 34px);
       display: flex;
       align-items: start;
-      overflow: hidden;
       position: relative;
     }
 
     .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 80% 50% at 85% 20%, rgba(0,165,80,0.12) 0%, transparent 50%),
-        radial-gradient(circle at 15% 75%, rgba(0,77,179,0.25) 0%, transparent 40%);
-      pointer-events: none;
+      display: none;
     }
 
-    /* padrão geométrico decorativo */
     .hero::after {
-      content: '';
-      position: absolute;
-      right: 0; top: 0;
-      width: 50%;
-      height: 100%;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-      background-size: 50px 50px;
-      pointer-events: none;
+      display: none;
     }
 
     .hero .container {
       position: relative;
       z-index: 2;
       display: grid;
-      grid-template-columns: 1fr 420px;
+      grid-template-columns: 1fr 380px;
       align-items: start;
-      gap: 4rem;
-      padding-top: 4rem;
-      padding-bottom: 4rem;
+      gap: 3rem;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
     }
 
     .hero-badge {
@@ -293,42 +276,51 @@
 
     .btn-primario {
       display: inline-flex;
-      align-items: start;
-      gap: 10px;
-      background: linear-gradient(135deg, var(--verde) 0%, #008a4a 100%);
-      color: #fff;
-      font-size: 15px;
-      font-weight: 700;
-      padding: 15px 32px;
-      border-radius: 50px;
-      transition: background .2s, transform .15s, box-shadow .2s;
-      box-shadow: 0 4px 20px rgba(0,165,80,0.35);
-      letter-spacing: 0.02em;
+      align-items: center;
+      gap: 8px;
+      background: var(--verde);
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 8px;
+      transition: background .2s;
     }
 
     .btn-primario:hover {
-      background: linear-gradient(135deg, #009044 0%, #00753c 100%);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 32px rgba(0,165,80,0.5);
+      background: #009a4a;
     }
 
     .btn-secundario {
       display: inline-flex;
-      align-items: start;
+      align-items: center;
       gap: 8px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.3);
-      color: #fff;
-      font-size: 15px;
+      background: transparent;
+      border: 2px solid var(--azul);
+      color: var(--azul);
+      font-size: 14px;
       font-weight: 600;
-      padding: 14px 28px;
-      border-radius: 40px;
-      transition: background .2s, transform .15s;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: all .2s;
     }
 
     .btn-secundario:hover {
-      background: rgba(255,255,255,0.18);
+      background: var(--azul);
+      color: white;
       transform: translateY(-2px);
+    }
+
+    .hero .btn-secundario {
+      border-color: rgba(255,255,255,0.65);
+      color: #fff;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .hero .btn-secundario:hover {
+      background: #fff;
+      color: var(--azul);
+      border-color: #fff;
     }
 
     .btn-compacto {
@@ -336,20 +328,41 @@
       font-size: 14px;
     }
 
-    .link-acao {
-      display: inline-flex;
-      align-items: start;
-      justify-content: center;
-      color: var(--azul);
+.link-acao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--azul);
       font-weight: 700;
-      border-bottom: 2px solid var(--ouro);
-      padding-bottom: 2px;
-    }
+      background: var(--azul-claro);
+      border: 1px solid rgba(0,48,135,0.12);
+  border-radius: 999px;
+  padding: 12px 20px;
+  min-height: 44px;
+  text-align: center;
+  white-space: normal;
+  transition: all .2s ease;
+}
 
     .secao-azul .link-acao,
     .movimento-card .link-acao {
       color: #fff;
-      border-bottom-color: var(--ouro);
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.22);
+    }
+
+    .link-acao:hover {
+      background: var(--azul);
+      color: #fff;
+      border-color: var(--azul);
+      transform: translateY(-2px);
+    }
+
+    .movimento-card .link-acao:hover,
+    .secao-azul .link-acao:hover {
+      background: #fff;
+      color: var(--azul);
+      border-color: #fff;
     }
 
     .hero-stats {
@@ -486,7 +499,7 @@
       font-family: var(--fonte-titulo);
       font-size: clamp(1.75rem, 3.5vw, 2.75rem);
       font-weight: 900;
-      color: var(--azul);
+      color: var(--azul-profundo);
       line-height: 1.2;
       margin-bottom: 1rem;
     }
@@ -505,7 +518,7 @@
        SOBRE
     ═══════════════════════════════════════ */
     .sobre-container {
-      max-width: 800px;
+      max-width: 700px;
       margin: 0 auto;
       text-align: center;
     }
@@ -516,46 +529,46 @@
 
     .sobre-texto h2 {
       font-family: var(--fonte-titulo);
-      font-size: clamp(1.75rem, 3vw, 2.5rem);
-      font-weight: 900;
-      color: var(--azul);
-      line-height: 1.2;
-      margin-bottom: 1.25rem;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--azul-profundo);
+      line-height: 1.25;
+      margin-bottom: 1rem;
     }
 
     .sobre-texto p {
       color: var(--cinza-3);
-      font-size: 1.05rem;
-      line-height: 1.8;
+      font-size: 1rem;
+      line-height: 1.7;
       margin-bottom: 1rem;
     }
 
     .frase-destaque {
-      font-size: 1.15rem !important;
+      font-size: 1.05rem;
       font-weight: 500;
-      color: var(--azul) !important;
+      color: var(--azul);
       font-style: italic;
-      padding: 1.5rem;
-      background: linear-gradient(135deg, rgba(0,48,135,0.04) 0%, rgba(0,165,80,0.04) 100%);
-      border-radius: var(--raio);
-      border-left: 3px solid var(--verde);
+      padding: 1.25rem;
+      background: var(--cinza-f);
+      border-radius: var(--raio-sm);
+      border-left: 3px solid var(--azul);
       text-align: left;
     }
 
     .tag-valor {
-      background: var(--azul-claro);
-      color: var(--azul);
+      background: var(--cinza-f);
+      color: var(--cinza-3);
       font-size: 13px;
       font-weight: 600;
-      padding: 8px 20px;
-      border-radius: 40px;
-      transition: all .2s ease;
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 1px solid var(--cinza-1);
     }
 
     .tag-valor:hover {
       background: var(--azul);
-      color: #fff;
-      transform: translateY(-2px);
+      color: white;
+      border-color: var(--azul);
     }
 
     .secao-cta {
@@ -747,13 +760,16 @@
     .propostas-grid {
       display: flex;
       flex-direction: column;
-      max-width: 700px;
+      gap: 1rem;
+      max-width: 600px;
       margin: 0 auto;
     }
 
     .proposta-card {
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      padding: 1.5rem 0;
+      background: white;
+      padding: 1.25rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
 
     .proposta-card:last-child { border-bottom: none; }
@@ -761,21 +777,21 @@
     .proposta-card:hover { background: none; transform: none; }
 
     .proposta-icon {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       margin-bottom: 0.5rem;
     }
 
     .proposta-card h3 {
       font-size: 1rem;
       font-weight: 700;
-      color: #fff;
+      color: var(--azul-profundo);
       margin-bottom: 0.4rem;
     }
 
     .proposta-card p {
-      font-size: 0.93rem;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.65;
+      font-size: 0.9rem;
+      color: var(--cinza-3);
+      line-height: 1.6;
     }
 
     /* ═══════════════════════════════════════
@@ -1049,66 +1065,104 @@
       margin-top: 1rem;
     }
 
-    /* Gabinete digital e movimento */
+    /* Gabinete digital - Design Limpo */
     .gabinete-secao {
-      background:
-        linear-gradient(135deg, var(--azul-profundo) 0%, var(--azul) 62%, #06325f 100%);
+      background: var(--cinza-f);
       position: relative;
-      overflow: hidden;
+      padding: 4rem 0;
+    }
+
+    .gabinete-secao .label-secao {
+      color: var(--verde);
+    }
+
+    .gabinete-secao .secao-header h2 {
+      color: var(--azul-profundo);
+    }
+
+    .gabinete-secao .secao-header p {
+      color: var(--cinza-3);
     }
 
     .gabinete-secao::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(214,168,58,0.12), transparent 45%, rgba(0,165,80,0.12));
-      pointer-events: none;
+      display: none;
     }
 
     .gabinete-grid {
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: 3rem;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
       align-items: start;
+      max-width: 980px;
+      margin: 0 auto;
     }
 
     .gabinete-info {
-      color: #fff;
+      color: var(--cinza-4);
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
     }
 
     .gabinete-info h3 {
       font-family: var(--fonte-titulo);
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      line-height: 1.15;
+      font-size: clamp(1.6rem, 3vw, 2rem);
+      line-height: 1.2;
       margin-bottom: 1rem;
+      color: var(--azul-profundo);
     }
 
     .gabinete-info p {
-      color: rgba(255,255,255,0.76);
-      font-size: 1.05rem;
-      margin-bottom: 1.5rem;
+      color: var(--cinza-3);
+      font-size: 1rem;
+      margin-bottom: 1.25rem;
     }
 
     .gabinete-passos {
-      display: grid;
-      gap: .75rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .gabinete-passos span {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.16);
-      border-left: 4px solid var(--ouro);
+      background: var(--branco);
+      border: 1px solid var(--cinza-1);
       border-radius: var(--raio-sm);
-      padding: 12px 14px;
-      font-weight: 700;
+      padding: 10px 16px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--azul-profundo);
     }
 
     .form-card-escuro {
       margin-top: 0;
-      border-top-color: var(--ouro);
-      box-shadow: 0 22px 60px rgba(0,0,0,0.25);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      background: #0f1f3d;
+      padding: 1.5rem;
+      border-radius: var(--raio);
+      border: 1px solid rgba(255,255,255,0.1);
+      width: 100%;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .form-card-escuro h3 {
+      color: #fff !important;
+      font-size: 1.35rem;
+      text-align: center;
+    }
+
+    .form-card-escuro .form-sub {
+      color: rgba(255,255,255,0.75) !important;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .form-card-escuro .highlight-voz {
+      color: #6effc0 !important;
     }
 
     .form-acoes {
@@ -1387,61 +1441,62 @@ DIVISORES DECORATIVOS (ONDAS)
 .divisor-onda-azul { background: var(--azul); }
 
     /* ═══════════════════════════════════════
-       RODAPÉ
-    ═══════════════════════════════════════ */
+RODAPÉ
+     ═══════════════════════════════════════ */
     footer {
-      background: var(--cinza-4);
-      color: rgba(255,255,255,0.7);
-      padding: 3.5rem 0 2rem;
+      background: var(--cinza-f);
+      color: var(--cinza-3);
+      padding: 2.5rem 0 1.5rem;
+      border-top: 1px solid var(--cinza-1);
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 3rem;
-      margin-bottom: 3rem;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
     }
 
     .footer-logo {
       font-family: var(--fonte-titulo);
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: #fff;
-      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--azul);
+      margin-bottom: 0.5rem;
     }
 
     .footer-logo span { color: var(--verde); }
 
     .footer-desc {
-      font-size: 14px;
-      line-height: 1.7;
-      margin-bottom: 1.25rem;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 1rem;
     }
 
     .footer-social {
       display: flex;
-      gap: 10px;
+      gap: 8px;
     }
 
     .social-btn {
       display: flex;
-      align-items: start;
+      align-items: center;
       justify-content: center;
       width: 38px; height: 38px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: var(--cinza-1);
+      border: 1px solid var(--cinza-2);
       font-size: 16px;
-      color: rgba(255,255,255,0.7);
+      color: var(--cinza-4);
       transition: background .2s, color .2s;
     }
 
-    .social-btn:hover { background: var(--verde); color: #fff; }
+    .social-btn:hover { background: var(--azul); color: #fff; }
 
     .footer-col h4 {
       font-size: 13px;
       font-weight: 700;
-      color: #fff;
+      color: var(--azul-profundo);
       text-transform: uppercase;
       letter-spacing: 0.08em;
       margin-bottom: 1rem;
@@ -1450,15 +1505,15 @@ DIVISORES DECORATIVOS (ONDAS)
     .footer-col a {
       display: block;
       font-size: 14px;
-      color: rgba(255,255,255,0.6);
+      color: var(--cinza-4);
       margin-bottom: 8px;
       transition: color .2s;
     }
 
-    .footer-col a:hover { color: var(--verde); }
+    .footer-col a:hover { color: var(--azul); }
 
     .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.08);
+      border-top: 1px solid var(--cinza-1);
       padding-top: 1.5rem;
       display: flex;
       justify-content: space-between;
@@ -1472,7 +1527,7 @@ DIVISORES DECORATIVOS (ONDAS)
       display: flex;
       align-items: start;
       gap: 8px;
-      color: rgba(255,255,255,0.7);
+      color: var(--cinza-4);
     }
 
     .podemos-badge img {
@@ -1849,11 +1904,24 @@ DIVISORES DECORATIVOS (ONDAS)
      
      /* Gabinete digital */
      .gabinete-info {
-       text-align: left;
+       text-align: center;
+       max-width: 100%;
      }
 
      .gabinete-passos {
+       justify-content: center;
        gap: .6rem;
+     }
+
+     .gabinete-passos span {
+       width: 100%;
+       max-width: 260px;
+       text-align: center;
+     }
+
+     .form-card-escuro {
+       padding: 1.25rem;
+       max-width: 100%;
      }
 
      .form-acoes {
@@ -2512,5 +2580,212 @@ DIVISORES DECORATIVOS (ONDAS)
 
   .countdown-num {
     font-size: clamp(1.25rem, 8vw, 1.65rem);
+  }
+}
+
+/* Formulário de Demandas */
+.form-demanda {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 14px;
+}
+
+.form-demanda .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 0;
+}
+
+.form-demanda .form-group:nth-of-type(6),
+.form-demanda .form-group:nth-of-type(7),
+.form-demanda .btn-primario,
+.form-demanda .form-mensagem {
+  grid-column: 1 / -1;
+}
+
+.form-demanda label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.form-demanda input,
+.form-demanda textarea,
+.form-demanda select {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.form-demanda input::placeholder,
+.form-demanda textarea::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+.form-demanda input:focus,
+.form-demanda textarea:focus {
+  outline: none;
+  border-color: var(--ouro);
+  background: rgba(255,255,255,0.15);
+}
+
+.input-foto {
+  padding: 8px 10px;
+  background: rgba(255,255,255,0.1);
+  border: 1px dashed rgba(255,255,255,0.3);
+  border-radius: 8px;
+  color: rgba(255,255,255,0.8);
+  cursor: pointer;
+}
+
+.input-foto:hover {
+  border-color: var(--ouro);
+}
+
+.form-demanda select:focus {
+  outline: none;
+  border-color: var(--ouro);
+  background: rgba(255,255,255,0.15);
+}
+
+.form-demanda select option {
+  background: #1e3a5f;
+  color: #fff;
+}
+
+.form-demanda textarea {
+  min-height: 92px;
+  resize: vertical;
+}
+
+.form-demanda .btn-primario {
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  background: var(--azul);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: .5rem;
+}
+
+.form-demanda .btn-primario:hover {
+  background: var(--azul-medio);
+}
+
+.form-demanda .btn-primario:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-mensagem {
+  text-align: center;
+  font-size: 13px;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: .5rem;
+}
+
+.form-mensagem.sucesso {
+  background: rgba(40,167,69,0.2);
+  color: #4ade80;
+  border: 1px solid #28a745;
+}
+
+.form-mensagem.erro {
+  background: rgba(220,53,69,0.2);
+  color: #f87171;
+  border: 1px solid #dc3545;
+}
+
+@media (max-width: 768px) {
+  .form-demanda {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .form-demanda .form-group:nth-of-type(6),
+  .form-demanda .form-group:nth-of-type(7),
+  .form-demanda .btn-primario,
+  .form-demanda .form-mensagem {
+    grid-column: auto;
+  }
+
+  .form-demanda textarea {
+    min-height: 84px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gabinete-secao {
+    padding: 3rem 0;
+  }
+
+  .gabinete-grid {
+    gap: 1.25rem;
+  }
+
+  .gabinete-info h3 {
+    font-size: 1.35rem;
+  }
+
+  .gabinete-info p {
+    font-size: 0.95rem;
+  }
+
+  .gabinete-passos {
+    gap: .5rem;
+  }
+
+  .gabinete-passos span {
+    padding: 9px 12px;
+    font-size: 0.85rem;
+  }
+
+  .form-card-escuro {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .form-card-escuro h3 {
+    font-size: 1.15rem;
+  }
+
+  .form-demanda {
+    gap: 9px;
+  }
+
+  .form-demanda label {
+    font-size: 12px;
+  }
+
+  .form-demanda input,
+  .form-demanda textarea,
+  .form-demanda select,
+  .input-foto {
+    padding: 9px 10px;
+    font-size: 13px;
+  }
+
+  .form-demanda textarea {
+    min-height: 78px;
+  }
+
+  .form-demanda .btn-primario,
+  .link-acao,
+  .hero .btn-secundario {
+    min-height: 42px;
+    padding: 11px 14px;
+    font-size: 13px;
   }
 }

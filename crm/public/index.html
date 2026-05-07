@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRM Paulinho Pereira</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="login-screen" class="login-screen">
+    <div class="login-box">
+      <div class="login-logo">
+        <img src="images/PODEMOS simbolo.jpg" alt="Partido Podemos" />
+      </div>
+      <h1>CRM Paulinho</h1>
+      <p class="login-subtitle">Gestão de Demandas</p>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="username">Usuário</label>
+          <input type="text" id="username" name="username" required autocomplete="username" />
+        </div>
+        <div class="form-group">
+          <label for="password">Senha</label>
+          <input type="password" id="password" name="password" required autocomplete="current-password" />
+        </div>
+        <button type="submit" class="btn-primary">Entrar</button>
+        <p id="login-error" class="login-error"></p>
+      </form>
+    </div>
+  </div>
+
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="../../images/PODEMOS simbolo.jpg" alt="Logo" />
+        <span>CRM Paulinho</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item active" data-view="dashboard">
+          <span class="nav-icon">📊</span>
+          Dashboard
+        </a>
+        <a href="#" class="nav-item" data-view="demandas">
+          <span class="nav-icon">📥</span>
+          Demandas
+        </a>
+        <a href="#" class="nav-item" data-view="arquivadas">
+          <span class="nav-icon">📦</span>
+          Arquivadas
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <span id="user-info"></span>
+        <button id="logout-btn" class="btn-logout">Sair</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="top-bar">
+        <h1 id="page-title">Dashboard</h1>
+        <div class="top-bar-actions">
+          <button id="refresh-btn" class="btn-icon" title="Atualizar">🔄</button>
+        </div>
+      </header>
+
+      <div id="dashboard-view" class="view active">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">📥</div>
+            <div class="stat-value" id="stat-total">0</div>
+            <div class="stat-label">Total de Demandas</div>
+          </div>
+          <div class="stat-card stat-novo">
+            <div class="stat-icon">🟡</div>
+            <div class="stat-value" id="stat-pendentes">0</div>
+            <div class="stat-label">Pendentes</div>
+          </div>
+          <div class="stat-card stat-atendimento">
+            <div class="stat-icon">🔵</div>
+            <div class="stat-value" id="stat-andamento">0</div>
+            <div class="stat-label">Em Atendimento</div>
+          </div>
+          <div class="stat-card stat-resolvido">
+            <div class="stat-icon">🟢</div>
+            <div class="stat-value" id="stat-resolvidos">0</div>
+            <div class="stat-label">Resolvidas</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="demandas-view" class="view">
+        <div class="filters-bar">
+          <div class="filter-group">
+            <label>Status:</label>
+            <select id="filter-status">
+              <option value="todos">Todos</option>
+              <option value="novo">Novo</option>
+              <option value="atendimento">Em Atendimento</option>
+              <option value="resolvido">Resolvido</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Bairro:</label>
+            <select id="filter-bairro">
+              <option value="">Todos</option>
+            </select>
+          </div>
+          <div class="filter-group search-group">
+            <input type="text" id="search-input" placeholder="Buscar por nome ou mensagem..." />
+          </div>
+          <button id="search-btn" class="btn-primary">Buscar</button>
+        </div>
+        <div class="demandas-list" id="demandas-list"></div>
+        <div class="pagination" id="pagination"></div>
+      </div>
+
+      <div id="arquivadas-view" class="view">
+        <div class="filters-bar">
+          <div class="filter-group search-group">
+            <input type="text" id="search-arquivadas" placeholder="Buscar..." />
+          </div>
+          <button id="search-arquivadas-btn" class="btn-primary">Buscar</button>
+        </div>
+        <div class="demandas-list" id="arquivadas-list"></div>
+      </div>
+
+      <div id="demanda-detail-view" class="view">
+        <div class="detail-header">
+          <button id="back-btn" class="btn-back">← Voltar</button>
+          <div class="detail-actions">
+            <button id="archive-btn" class="btn-secondary">Arquivar</button>
+            <button id="delete-btn" class="btn-danger">Excluir</button>
+          </div>
+        </div>
+        <div class="detail-content">
+          <div class="detail-info">
+            <div class="detail-row">
+              <label>ID:</label>
+              <span id="detail-id"></span>
+            </div>
+            <div class="detail-row">
+              <label>Status:</label>
+              <select id="detail-status">
+                <option value="novo">🟡 Novo</option>
+                <option value="atendimento">🔵 Em Atendimento</option>
+                <option value="resolvido">🟢 Resolvido</option>
+              </select>
+            </div>
+            <div class="detail-row">
+              <label>Nome:</label>
+              <span id="detail-nome"></span>
+            </div>
+            <div class="detail-row">
+              <label>Bairro:</label>
+              <span id="detail-bairro"></span>
+            </div>
+            <div class="detail-row">
+              <label>Contato:</label>
+              <span id="detail-contato"></span>
+            </div>
+            <div class="detail-row">
+              <label>Tipo:</label>
+              <span id="detail-tipo"></span>
+            </div>
+            <div class="detail-row">
+              <label>Data:</label>
+              <span id="detail-data"></span>
+            </div>
+          </div>
+          <div class="detail-mensagem">
+            <h3>Mensagem</h3>
+            <p id="detail-mensagem-text"></p>
+          </div>
+          <div class="detail-resposta">
+            <h3>Resposta</h3>
+            <div class="templates-bar">
+              <button class="template-btn" data-template="1">Agradecimento</button>
+              <button class="template-btn" data-template="2">Em Andamento</button>
+              <button class="template-btn" data-template="3">Encaminhado</button>
+              <button class="template-btn" data-template="4">Resolvido</button>
+              <button class="template-btn" data-template="5">Mais Info</button>
+            </div>
+            <textarea id="resposta-input" placeholder="Escreva sua resposta..."></textarea>
+            <div class="resposta-actions">
+              <button id="copy-whatsapp-btn" class="btn-secondary">📋 Copiar para WhatsApp</button>
+              <button id="save-resposta-btn" class="btn-primary">Salvar Resposta</button>
+            </div>
+          </div>
+          <div class="detail-observacoes">
+            <h3>Observações Internas</h3>
+            <textarea id="observacoes-input" placeholder="Notas internas..."></textarea>
+            <button id="save-observacoes-btn" class="btn-primary">Salvar Observações</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div id="confirm-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Confirmar Ação</h3>
+      <p id="confirm-message"></p>
+      <div class="modal-actions">
+        <button id="confirm-cancel" class="btn-secondary">Cancelar</button>
+        <button id="confirm-ok" class="btn-danger">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
