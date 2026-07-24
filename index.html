@@ -4,141 +4,153 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Paulinho Pereira - Pré-candidato a Deputado Estadual RS 2026</title>
-  <meta name="description" content="Conheça a trajetória e as propostas de Paulinho Pereira, pré-candidato a Deputado Estadual pelo Rio Grande do Sul. Podemos 20." />
-  <meta name="keywords" content="Paulinho Pereira, Deputado Estadual, Podemos, São Lourenço do Sul, Eleições 2026" />
-  <meta property="og:title" content="Paulinho Pereira - Pré-candidato a Deputado Estadual RS 2026" />
-  <meta property="og:description" content="Vereador por 3 mandatos em São Lourenço do Sul. Agora preparado para representar o Rio Grande do Sul na Assembleia Legislativa." />
+  <meta name="description" content="Conheça a trajetória e as propostas de Paulinho Pereira, pré-candidato a Deputado Estadual pelo Rio Grande do Sul. Podemos 20 — a voz do sul na Assembleia." />
+  <meta name="keywords" content="Paulinho Pereira, Deputado Estadual, Podemos 20, São Lourenço do Sul, Eleições 2026, RS" />
+  <meta property="og:title" content="Paulinho Pereira — Pré-candidato a Deputado Estadual RS 2026" />
+  <meta property="og:description" content="Três mandatos como vereador. O mais votado da história de São Lourenço do Sul. Agora preparado para representar o Rio Grande do Sul na Assembleia Legislativa." />
   <meta property="og:image" content="https://paulinhopereira.com.br/images/FOTO%20PERFIL%20NOVA.png" />
+  <meta property="og:image:width" content="800" />
+  <meta property="og:image:height" content="1000" />
   <meta property="og:url" content="https://paulinhopereira.com.br" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Paulinho Pereira — Pré-candidato a Deputado Estadual RS 2026" />
+  <meta name="twitter:description" content="A voz do sul na Assembleia Legislativa. Podemos 20." />
   <link rel="icon" type="image/png" href="images/logo-podemos.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="#" class="header__logo">
-        <img src="images/logo-podemos.png" alt="Podemos" class="header__logo-img" />
+        <img src="images/logo-podemos.png" alt="Podemos 20" class="header__logo-img" />
         <span class="header__logo-text">Paulinho <strong>Pereira</strong></span>
       </a>
-      <nav class="header__nav" id="nav">
+      <nav class="header__nav" id="nav" role="navigation" aria-label="Menu principal">
         <ul class="header__nav-list">
-          <li><a href="#sobre" class="header__nav-link">Sobre</a></li>
+          <li><a href="#trajetoria" class="header__nav-link">Trajetória</a></li>
           <li><a href="#propostas" class="header__nav-link">Propostas</a></li>
+          <li><a href="#apoios" class="header__nav-link">Apoios</a></li>
           <li><a href="#numeros" class="header__nav-link">Números</a></li>
-          <li><a href="#contato" class="header__nav-link">Contato</a></li>
+          <li><a href="#participe" class="header__nav-link btn--header-cta">Participe</a></li>
         </ul>
       </nav>
-      <div class="header__actions">
-        <a href="https://wa.me/555399999999" class="btn btn--whatsapp btn--sm" target="_blank" rel="noopener">
-          <i class="fab fa-whatsapp"></i> Fale Comigo
-        </a>
-        <button class="header__hamburger" id="hamburger" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+      <button class="header__hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
   <main>
     <section class="hero" id="hero">
-      <div class="hero__bg">
-        <div class="hero__shape hero__shape--1"></div>
-        <div class="hero__shape hero__shape--2"></div>
-        <div class="hero__shape hero__shape--3"></div>
-      </div>
+      <div class="hero__overlay"></div>
       <div class="container hero__inner">
-        <div class="hero__content fade-in">
-          <div class="hero__party-badge">
-            <img src="images/logo-podemos.png" alt="Podemos" class="hero__party-logo" />
-            <span>Podemos <strong>20</strong></span>
+        <div class="hero__content">
+          <div class="hero__badge reveal">
+            <img src="images/logo-podemos.png" alt="Podemos" class="hero__badge-logo" />
+            <span>Podemos <strong>20</strong> — RS</span>
           </div>
-          <h1 class="hero__title">
+          <h1 class="hero__title reveal" data-delay="100">
             Paulinho<br />
-            <span class="hero__title-highlight">Pereira</span>
+            <span class="hero__title-accent">Pereira</span>
           </h1>
-          <p class="hero__subtitle">Vereador por 3 mandatos em São Lourenço do Sul.<br />Pré-candidato a Deputado Estadual RS 2026.</p>
-          <div class="hero__cta">
+          <p class="hero__subtitle reveal" data-delay="200">Vereador por 3 mandatos · O mais votado da história de São Lourenço do Sul · Pré-candidato a Deputado Estadual RS 2026</p>
+          <div class="hero__actions reveal" data-delay="300">
             <a href="#propostas" class="btn btn--primary">Conheça as Propostas</a>
-            <a href="https://wa.me/555399999999" class="btn btn--whatsapp" target="_blank" rel="noopener">
-              <i class="fab fa-whatsapp"></i> Fale Direto
-            </a>
+            <a href="https://wa.me/555399999999" class="btn btn--whatsapp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Fale Direto</a>
           </div>
-          <div class="hero__social">
-            <a href="https://www.instagram.com/paulinhopereirasls/" class="hero__social-link" target="_blank" rel="noopener" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.facebook.com/paulinhopereira.sls" class="hero__social-link" target="_blank" rel="noopener" aria-label="Facebook">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://wa.me/555399999999" class="hero__social-link" target="_blank" rel="noopener" aria-label="WhatsApp">
-              <i class="fab fa-whatsapp"></i>
-            </a>
+          <div class="hero__social reveal" data-delay="400">
+            <a href="https://www.instagram.com/paulinhopereirasls/" class="hero__social-link" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/paulinhopereira.sls" class="hero__social-link" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/555399999999" class="hero__social-link" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
           </div>
         </div>
-        <div class="hero__image fade-in" data-delay="200">
-          <div class="hero__image-frame">
+        <div class="hero__visual reveal" data-delay="150">
+          <div class="hero__photo-frame">
             <img src="images/FOTO%20PERFIL%20NOVA.png" alt="Paulinho Pereira" class="hero__photo" />
+            <div class="hero__photo-ring"></div>
           </div>
           <div class="hero__stats">
             <div class="hero__stat">
-              <span class="hero__stat-number">3</span>
-              <span class="hero__stat-label">Mandatos</span>
-            </div>
-            <div class="hero__stat">
-              <span class="hero__stat-number">1.383</span>
+              <span class="hero__stat-number" data-count="1383">0</span>
               <span class="hero__stat-label">Votos em 2024</span>
             </div>
             <div class="hero__stat">
-              <span class="hero__stat-number">20</span>
-              <span class="hero__stat-label">Podemos</span>
+              <span class="hero__stat-number" data-count="3">0</span>
+              <span class="hero__stat-label">Mandatos</span>
+            </div>
+            <div class="hero__stat">
+              <span class="hero__stat-number" data-count="14">0</span>
+              <span class="hero__stat-label">Anos de mandato</span>
             </div>
           </div>
         </div>
       </div>
+      <div class="hero__scroll-indicator">
+        <span>Role para explorar</span>
+        <div class="hero__scroll-line"></div>
+      </div>
     </section>
 
-    <section class="sobre" id="sobre">
+    <section class="trajetoria" id="trajetoria">
       <div class="container">
-        <div class="section__header fade-in">
+        <div class="section__header reveal">
+          <span class="section__number">01</span>
           <p class="section__tag">Trajetória</p>
-          <h2 class="section__title">Quem é <span class="text-highlight">Paulinho Pereira</span></h2>
-          <div class="section__divider"></div>
+          <h2 class="section__title">Uma história de <span class="text--gold">compromisso</span></h2>
+          <div class="section__bar"></div>
         </div>
-        <div class="sobre__content">
-          <div class="sobre__text fade-in">
-            <p>Natural de São Lourenço do Sul, Paulinho Pereira construiu sua trajetória política ao lado da comunidade. Com três mandatos consecutivos como vereador, tornou-se uma das vozes mais atuantes da região sul do estado.</p>
-            <p>Em 2024, foi reeleito o <strong>vereador mais votado da história de São Lourenço do Sul</strong>, com 1.383 votos — um reconhecimento do trabalho sério e dedicado que realiza há mais de uma década.</p>
-            <p>Agora, Paulinho se prepara para o maior desafio de sua carreira: ser <strong>Deputado Estadual pelo Rio Grande do Sul</strong>, levando a voz do povo lourenciano e de todo o sul do estado para a Assembleia Legislativa.</p>
-            <div class="sobre__timeline">
-              <div class="timeline__item">
-                <div class="timeline__dot"></div>
-                <div class="timeline__content">
-                  <span class="timeline__year">2012</span>
-                  <p class="timeline__text">Eleito vereador pela primeira vez</p>
-                </div>
-              </div>
-              <div class="timeline__item">
-                <div class="timeline__dot"></div>
-                <div class="timeline__content">
-                  <span class="timeline__year">2024</span>
-                  <p class="timeline__text">Reeleito vereador mais votado da história da cidade (1.383 votos)</p>
-                </div>
-              </div>
-              <div class="timeline__item">
-                <div class="timeline__dot"></div>
-                <div class="timeline__content">
-                  <span class="timeline__year">2026</span>
-                  <p class="timeline__text">Pré-candidato a Deputado Estadual RS pelo Podemos</p>
-                </div>
-              </div>
-            </div>
+        <div class="trajetoria__grid">
+          <div class="trajetoria__content reveal">
+            <p class="trajetoria__lead">Natural de São Lourenço do Sul, Paulinho Pereira construiu sua trajetória política ao lado da comunidade. São mais de 14 anos de vida pública dedicados a quem mais precisa.</p>
+            <p>Em <strong>2024, foi reeleito o vereador mais votado da história de São Lourenço do Sul</strong> com 1.383 votos — um reconhecimento do trabalho sério e dedicado que realiza há mais de uma década. Agora, Paulinho se prepara para levar a voz do povo lourenciano e de todo o sul do estado à Assembleia Legislativa.</p>
+            <blockquote class="trajetoria__quote">
+              <p>"São Lourenço me ensinou o valor da palavra dada. Levo essa responsabilidade comigo para cada batalha que enfrento em nome do nosso povo."</p>
+              <cite>— Paulinho Pereira</cite>
+            </blockquote>
           </div>
-          <div class="sobre__image fade-in" data-delay="200">
-            <img src="images/FOTO%20PERFIL%20NOVA.png" alt="Paulinho Pereira" />
+          <div class="trajetoria__timeline reveal" data-delay="200">
+            <div class="timeline__item">
+              <div class="timeline__marker">
+                <span class="timeline__year">2012</span>
+                <div class="timeline__dot"></div>
+              </div>
+              <p class="timeline__text">Eleito vereador pela primeira vez em São Lourenço do Sul</p>
+            </div>
+            <div class="timeline__item">
+              <div class="timeline__marker">
+                <span class="timeline__year">2016</span>
+                <div class="timeline__dot"></div>
+              </div>
+              <p class="timeline__text">Reeleito com votação expressiva, consolidando seu trabalho</p>
+            </div>
+            <div class="timeline__item">
+              <div class="timeline__marker">
+                <span class="timeline__year">2020</span>
+                <div class="timeline__dot"></div>
+              </div>
+              <p class="timeline__text">Terceiro mandato consecutivo como vereador</p>
+            </div>
+            <div class="timeline__item">
+              <div class="timeline__marker">
+                <span class="timeline__year">2024</span>
+                <div class="timeline__dot timeline__dot--gold"></div>
+              </div>
+              <p class="timeline__text">Reeleito o vereador mais votado da história da cidade — 1.383 votos</p>
+            </div>
+            <div class="timeline__item">
+              <div class="timeline__marker">
+                <span class="timeline__year timeline__year--current">2026</span>
+                <div class="timeline__dot timeline__dot--current"></div>
+              </div>
+              <p class="timeline__text">Pré-candidato a Deputado Estadual RS pelo Podemos 20</p>
+            </div>
           </div>
         </div>
       </div>
@@ -146,120 +158,152 @@
 
     <section class="propostas" id="propostas">
       <div class="container">
-        <div class="section__header fade-in">
+        <div class="section__header reveal">
+          <span class="section__number">02</span>
           <p class="section__tag">Bandeiras</p>
-          <h2 class="section__title">Nossas <span class="text-highlight">Propostas</span></h2>
-          <div class="section__divider"></div>
+          <h2 class="section__title">Nossas <span class="text--gold">propostas</span></h2>
+          <div class="section__bar"></div>
         </div>
         <div class="propostas__grid">
-          <div class="proposta-card fade-in">
-            <div class="proposta-card__icon">
-              <i class="fas fa-seedling"></i>
-            </div>
-            <h3 class="proposta-card__title">Agricultura Familiar</h3>
-            <p class="proposta-card__text">Fortalecimento da agricultura familiar com crédito rural, assistência técnica e incentivo à produção sustentável.</p>
+          <div class="proposta-card reveal">
+            <div class="proposta-card__icon"><i class="fas fa-seedling"></i></div>
+            <h3>Agricultura Familiar</h3>
+            <p>Fortalecimento da agricultura familiar com crédito rural, assistência técnica e incentivo à produção sustentável.</p>
           </div>
-          <div class="proposta-card fade-in" data-delay="100">
-            <div class="proposta-card__icon">
-              <i class="fas fa-stethoscope"></i>
-            </div>
-            <h3 class="proposta-card__title">Saúde Pública</h3>
-            <p class="proposta-card__text">Ampliação do atendimento básico, redução das filas de espera e valorização dos profissionais da saúde.</p>
+          <div class="proposta-card reveal" data-delay="100">
+            <div class="proposta-card__icon"><i class="fas fa-heart-pulse"></i></div>
+            <h3>Saúde Pública</h3>
+            <p>Ampliação do atendimento básico, redução das filas de espera e valorização dos profissionais da saúde.</p>
           </div>
-          <div class="proposta-card fade-in" data-delay="200">
-            <div class="proposta-card__icon">
-              <i class="fas fa-graduation-cap"></i>
-            </div>
-            <h3 class="proposta-card__title">Educação</h3>
-            <p class="proposta-card__text">Investimento em infraestrutura escolar, formação continuada de professores e educação em tempo integral.</p>
+          <div class="proposta-card reveal" data-delay="200">
+            <div class="proposta-card__icon"><i class="fas fa-graduation-cap"></i></div>
+            <h3>Educação</h3>
+            <p>Investimento em infraestrutura escolar, formação continuada de professores e educação em tempo integral.</p>
           </div>
-          <div class="proposta-card fade-in" data-delay="100">
-            <div class="proposta-card__icon">
-              <i class="fas fa-road"></i>
-            </div>
-            <h3 class="proposta-card__title">Infraestrutura</h3>
-            <p class="proposta-card__text">Melhoria de estradas vicinais, saneamento básico e mobilidade urbana para todas as regiões do estado.</p>
+          <div class="proposta-card reveal" data-delay="100">
+            <div class="proposta-card__icon"><i class="fas fa-road"></i></div>
+            <h3>Infraestrutura</h3>
+            <p>Melhoria de estradas vicinais, saneamento básico e mobilidade urbana para todas as regiões do estado.</p>
           </div>
-          <div class="proposta-card fade-in" data-delay="200">
-            <div class="proposta-card__icon">
-              <i class="fas fa-hand-holding-heart"></i>
-            </div>
-            <h3 class="proposta-card__title">Assistência Social</h3>
-            <p class="proposta-card__text">Programas de inclusão social, apoio às famílias em situação de vulnerabilidade e proteção aos idosos.</p>
+          <div class="proposta-card reveal" data-delay="200">
+            <div class="proposta-card__icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <h3>Assistência Social</h3>
+            <p>Programas de inclusão social, apoio às famílias em situação de vulnerabilidade e proteção aos idosos.</p>
           </div>
-          <div class="proposta-card fade-in" data-delay="300">
-            <div class="proposta-card__icon">
-              <i class="fas fa-water"></i>
+          <div class="proposta-card reveal" data-delay="300">
+            <div class="proposta-card__icon"><i class="fas fa-droplet"></i></div>
+            <h3>Meio Ambiente</h3>
+            <p>Preservação dos recursos hídricos, desenvolvimento sustentável e educação ambiental nas comunidades.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="apoios" id="apoios">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__number">03</span>
+          <p class="section__tag">Apoios</p>
+          <h2 class="section__title">Quem confia em <span class="text--gold">Paulinho</span></h2>
+          <div class="section__bar"></div>
+        </div>
+        <div class="apoios__grid">
+          <div class="apoio-card reveal">
+            <div class="apoio-card__avatar"><i class="fas fa-user-tie"></i></div>
+            <p class="apoio-card__text">"Conheço o Paulinho há anos. É um homem de palavra, que nunca abandonou suas origens. O Rio Grande do Sul precisa de gente assim na Assembleia."</p>
+            <div class="apoio-card__author">
+              <strong>Líder Comunitário</strong>
+              <span>Região Sul do RS</span>
             </div>
-            <h3 class="proposta-card__title">Meio Ambiente</h3>
-            <p class="proposta-card__text">Preservação dos recursos hídricos, desenvolvimento sustentável e educação ambiental nas comunidades.</p>
+          </div>
+          <div class="apoio-card reveal" data-delay="100">
+            <div class="apoio-card__avatar"><i class="fas fa-handshake"></i></div>
+            <p class="apoio-card__text">"Trabalhamos juntos em diversos projetos para a comunidade. Paulinho é incansável na luta pelos direitos do povo."</p>
+            <div class="apoio-card__author">
+              <strong>Sindicato dos Trabalhadores</strong>
+              <span>São Lourenço do Sul</span>
+            </div>
+          </div>
+          <div class="apoio-card reveal" data-delay="200">
+            <div class="apoio-card__avatar"><i class="fas fa-people-group"></i></div>
+            <p class="apoio-card__text">"O trabalho do Paulinho na agricultura familiar transformou a vida de muitas famílias na nossa região. Ele entende do campo porque viveu no campo."</p>
+            <div class="apoio-card__author">
+              <strong>Associação de Agricultores</strong>
+              <span>Zona Sul RS</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <section class="numeros" id="numeros">
+      <div class="numeros__bg"></div>
       <div class="container">
-        <div class="section__header fade-in">
-          <p class="section__tag">Resultados</p>
-          <h2 class="section__title">Números que <span class="text-highlight">Falam</span></h2>
-          <div class="section__divider"></div>
+        <div class="section__header reveal">
+          <span class="section__number section__number--light">04</span>
+          <p class="section__tag section__tag--light">Resultados</p>
+          <h2 class="section__title section__title--light">Números que <span class="text--gold">falam</span></h2>
+          <div class="section__bar section__bar--light"></div>
         </div>
         <div class="numeros__grid">
-          <div class="numero-card fade-in">
-            <div class="numero-card__icon">
-              <i class="fas fa-vote-yea"></i>
-            </div>
-            <span class="numero-card__number count" data-target="1383">0</span>
-            <span class="numero-card__label">Votos em 2024</span>
+          <div class="numero-card reveal">
+            <i class="numero-card__icon fas fa-vote-yea"></i>
+            <span class="numero-card__number" data-target="1383">0</span>
+            <span class="numero-card__suffix">votos</span>
+            <span class="numero-card__label">Maior votação da história da cidade em 2024</span>
           </div>
-          <div class="numero-card fade-in" data-delay="100">
-            <div class="numero-card__icon">
-              <i class="fas fa-landmark"></i>
-            </div>
-            <span class="numero-card__number count" data-target="3">0</span>
-            <span class="numero-card__label">Mandatos como Vereador</span>
+          <div class="numero-card reveal" data-delay="100">
+            <i class="numero-card__icon fas fa-landmark"></i>
+            <span class="numero-card__number" data-target="3">0</span>
+            <span class="numero-card__suffix">mandatos</span>
+            <span class="numero-card__label">Consecutivos como vereador</span>
           </div>
-          <div class="numero-card fade-in" data-delay="200">
-            <div class="numero-card__icon">
-              <i class="fas fa-calendar-alt"></i>
-            </div>
-            <span class="numero-card__number count" data-target="14">0</span>
-            <span class="numero-card__label">Anos de Vida Pública</span>
+          <div class="numero-card reveal" data-delay="200">
+            <i class="numero-card__icon fas fa-calendar"></i>
+            <span class="numero-card__number" data-target="14">0</span>
+            <span class="numero-card__suffix">anos</span>
+            <span class="numero-card__label">De vida pública dedicada à comunidade</span>
           </div>
-          <div class="numero-card fade-in" data-delay="300">
-            <div class="numero-card__icon">
-              <i class="fas fa-file-signature"></i>
-            </div>
-            <span class="numero-card__number count" data-target="200">0</span>
-            <span class="numero-card__label">Demandas Atendidas</span>
+          <div class="numero-card reveal" data-delay="300">
+            <i class="numero-card__icon fas fa-file-signature"></i>
+            <span class="numero-card__number" data-target="200">0</span>
+            <span class="numero-card__suffix">+</span>
+            <span class="numero-card__label">Demandas e projetos atendidos</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="redes" id="contato">
+    <section class="participe" id="participe">
       <div class="container">
-        <div class="section__header fade-in">
-          <p class="section__tag">Contato</p>
-          <h2 class="section__title">Vamos <span class="text-highlight">Conversar</span></h2>
-          <div class="section__divider"></div>
-        </div>
-        <div class="redes__content fade-in">
-          <p class="redes__text">Sua opinião é muito importante. Entre em contato pelas redes sociais ou pelo WhatsApp. Vamos construir juntos um Rio Grande do Sul melhor!</p>
-          <div class="redes__links">
-            <a href="https://wa.me/555399999999" class="redes__link redes__link--whatsapp" target="_blank" rel="noopener">
-              <i class="fab fa-whatsapp"></i>
-              <span>WhatsApp</span>
-            </a>
-            <a href="https://www.instagram.com/paulinhopereirasls/" class="redes__link redes__link--instagram" target="_blank" rel="noopener">
-              <i class="fab fa-instagram"></i>
-              <span>Instagram</span>
-            </a>
-            <a href="https://www.facebook.com/paulinhopereira.sls" class="redes__link redes__link--facebook" target="_blank" rel="noopener">
-              <i class="fab fa-facebook-f"></i>
-              <span>Facebook</span>
-            </a>
+        <div class="participe__inner">
+          <div class="participe__content reveal">
+            <span class="section__number">05</span>
+            <p class="section__tag">Participe</p>
+            <h2 class="section__title">Junte-se a <span class="text--gold">nós</span></h2>
+            <div class="section__bar"></div>
+            <p class="participe__text">A política se faz com união. Queremos construir um Rio Grande do Sul mais justo, próspero e acolhedor para todos. Sua participação é essencial nessa caminhada.</p>
+            <div class="participe__options">
+              <a href="https://wa.me/555399999999" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Quero Ajudar</a>
+              <a href="https://www.instagram.com/paulinhopereirasls/" class="btn btn--outline btn--lg" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Siga no Instagram</a>
+            </div>
+          </div>
+          <div class="participe__form reveal" data-delay="200">
+            <div class="form-card">
+              <h3 class="form-card__title">Receba atualizações</h3>
+              <p class="form-card__text">Fique por dentro das novidades da campanha e dos projetos de Paulinho Pereira.</p>
+              <form class="form-card__form" id="newsletterForm" action="#" method="post">
+                <div class="form-card__group">
+                  <label for="nome">Seu nome</label>
+                  <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
+                </div>
+                <div class="form-card__group">
+                  <label for="email">Seu e-mail</label>
+                  <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+                </div>
+                <button type="submit" class="btn btn--primary btn--full">Quero Receber Novidades</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -267,31 +311,53 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <img src="images/logo-podemos.png" alt="Podemos" class="footer__logo" />
-        <div class="footer__info">
-          <p class="footer__name">Paulinho Pereira</p>
-          <p class="footer__party">Podemos 20 — Pré-candidato a Deputado Estadual RS 2026</p>
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="images/logo-podemos.png" alt="Podemos" class="footer__logo" />
+          <div>
+            <p class="footer__name">Paulinho Pereira</p>
+            <p class="footer__slogan">A voz do sul na Assembleia Legislativa</p>
+          </div>
+        </div>
+        <div class="footer__links">
+          <a href="#trajetoria">Trajetória</a>
+          <a href="#propostas">Propostas</a>
+          <a href="#apoios">Apoios</a>
+          <a href="#numeros">Números</a>
+          <a href="#participe">Participe</a>
+        </div>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/paulinhopereirasls/" class="footer__social-link" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/paulinhopereira.sls" class="footer__social-link" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/555399999999" class="footer__social-link" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
-      <div class="footer__social">
-        <a href="https://www.instagram.com/paulinhopereirasls/" class="footer__social-link" target="_blank" rel="noopener" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.facebook.com/paulinhopereira.sls" class="footer__social-link" target="_blank" rel="noopener" aria-label="Facebook">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://wa.me/555399999999" class="footer__social-link" target="_blank" rel="noopener" aria-label="WhatsApp">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-      </div>
-      <div class="footer__copyright">
-        <p>&copy; 2026 Paulinho Pereira. Todos os direitos reservados.</p>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Paulinho Pereira — Podemos 20. Todos os direitos reservados.</p>
+        <p>Desenvolvido com o apoio de voluntários da campanha.</p>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <a href="https://wa.me/555399999999" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Fale pelo WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script>
+    
+    
+    const WA_NUMBER = '555399999999';
+    
+    
+    document.querySelectorAll('a[href*="wa.me"]').forEach(el => {
+      el.href = `https://wa.me/${WA_NUMBER}`;
+    });
+  </script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
