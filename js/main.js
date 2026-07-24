@@ -1,231 +1,136 @@
-/* ---- Tela de carregamento ---- */
-window.addEventListener('load', () => {
-  // Hide loader as soon as the page has fully loaded
-  requestAnimationFrame(() => {
-    document.getElementById('loader').classList.add('escondido');
-  });
-});
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.getElementById('header');
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('nav');
+  const navLinks = document.querySelectorAll('.header__nav-link');
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const counters = document.querySelectorAll('.count');
+  const hero = document.getElementById('hero');
 
-/* ---- Barra de progresso ---- */
-const barraProgresso = document.getElementById('progresso-leitura');
-window.addEventListener('scroll', () => {
-  const rolagem = window.scrollY;
-  const alturaDoc = document.documentElement.scrollHeight - window.innerHeight;
-  const porcento = alturaDoc > 0 ? (rolagem / alturaDoc) * 100 : 0;
-  barraProgresso.style.width = porcento + '%';
-}, { passive: true });
+  let countersAnimated = false;
 
-/* ---- Contador animado ---- */
-function animarContador(elemento) {
-  const alvo = parseInt(elemento.getAttribute('data-count'), 10);
-  const sufixo = elemento.getAttribute('data-suffix') || '';
-  const velocidade = parseInt(elemento.getAttribute('data-speed'), 10) || 1200;
-  const inicio = 0;
-  const duracao = velocidade;
-  const tempoInicio = performance.now();
+  /* Header scroll */
+  function handleScroll() {
+    const scrollY = window.scrollY;
+    if (scrollY > 80) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
 
-  function atualizar(tempoAtual) {
-    const passado = tempoAtual - tempoInicio;
-    const progresso = Math.min(passado / duracao, 1);
-    const suavizado = 1 - Math.pow(1 - progresso, 3);
-    const valor = Math.floor(inicio + (alvo - inicio) * suavizado);
-    elemento.textContent = valor + sufixo;
-    if (progresso < 1) requestAnimationFrame(atualizar);
+    /* Active nav link */
+    const sections = document.querySelectorAll('section[id]');
+    let current = '';
+    sections.forEach((s) => {
+      const top = s.offsetTop - 150;
+      if (scrollY >= top) {
+        current = s.getAttribute('id');
+      }
+    });
+    navLinks.forEach((link) => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
   }
-  requestAnimationFrame(atualizar);
-}
 
-const observadorStats = new IntersectionObserver((entradas) => {
-  entradas.forEach(entrada => {
-    if (entrada.isIntersecting) {
-      animarContador(entrada.target);
-      observadorStats.unobserve(entrada.target);
-    }
+  window.addEventListener('scroll', handleScroll, { passive: true });
+
+  /* Hamburguer menu */
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    nav.classList.toggle('open');
   });
-}, { threshold: 0.5 });
 
-document.querySelectorAll('.hero-stat-num[data-count]').forEach(el => observadorStats.observe(el));
-
-/* ---- Efeito parallax na foto ---- */
-const fotoHero = document.querySelector('.hero-foto');
-if (fotoHero) {
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    if (y < window.innerHeight) {
-      fotoHero.style.transform = 'translateY(' + (y * 0.12) + 'px)';
-    }
-  }, { passive: true });
-}
-
-/* ---- Menu sanduíche ---- */
-const botaoMenu = document.getElementById('hamburger');
-const linksNav = document.getElementById('nav-links');
-
-botaoMenu.addEventListener('click', () => {
-  linksNav.classList.toggle('aberto');
-  botaoMenu.classList.toggle('aberto');
-});
-
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    linksNav.classList.remove('aberto');
-    botaoMenu.classList.remove('aberto');
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      nav.classList.remove('open');
+    });
   });
-});
 
-// Fechar menu ao clicar fora
-document.addEventListener('click', (e) => {
-  if (!botaoMenu.contains(e.target) && !linksNav.contains(e.target)) {
-    linksNav.classList.remove('aberto');
-    botaoMenu.classList.remove('aberto');
+  closeNavOnClickOutside(nav, hamburger);
+
+  function closeNavOnClickOutside(navEl, hamburgerEl) {
+    document.addEventListener('click', (e) => {
+      if (
+        navEl.classList.contains('open') &&
+        !navEl.contains(e.target) &&
+        !hamburgerEl.contains(e.target)
+      ) {
+        navEl.classList.remove('open');
+        hamburgerEl.classList.remove('active');
+      }
+    });
   }
-});
 
-/* ---- Aparecer ao rolar ---- */
-const observadorAparecer = new IntersectionObserver((entradas) => {
-  entradas.forEach(entrada => {
-    if (entrada.isIntersecting) {
-      entrada.target.classList.add('visible');
-      observadorAparecer.unobserve(entrada.target);
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-document.querySelectorAll('.reveal').forEach(el => observadorAparecer.observe(el));
-
-/* ---- Gabinete Digital (envia via WhatsApp) ---- */
-const formulario = document.getElementById('form-apoio');
-const msgForm = document.getElementById('form-msg');
-let acaoFormulario = 'Preciso de ajuda';
-
-document.querySelectorAll('#form-apoio button[type="submit"][data-acao]').forEach(botao => {
-  botao.addEventListener('click', () => {
-    acaoFormulario = botao.dataset.acao || acaoFormulario;
-  });
-});
-
-if (formulario) {
-  formulario.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const nome = document.getElementById('nome').value.trim();
-    const bairro = document.getElementById('bairro').value.trim();
-    const mensagem = document.getElementById('mensagem').value.trim();
-
-    if (!nome || !bairro || !mensagem) {
-      alert('Preencha os campos obrigatórios: Nome, Bairro e Problema ou sugestão.');
-      return;
-    }
-
-    const texto = encodeURIComponent(
-      `*GABINETE DIGITAL - Paulinho Pereira*\n\n` +
-      `*Tipo:* ${acaoFormulario}\n` +
-      `*Nome:* ${nome}\n` +
-      `*Bairro/localidade:* ${bairro}\n\n` +
-      `*Problema ou sugestão:*\n${mensagem}\n\n` +
-      `Enviado pelo site oficial.`
-    );
-
-    window.open(`https://wa.me/5553912345678?text=${texto}`, '_blank');
-
-    msgForm.style.display = 'block';
-    formulario.reset();
-    setTimeout(() => { msgForm.style.display = 'none'; }, 7000);
-  });
-}
-
-/* ---- Destacar link ativo no menu (com classe CSS) ---- */
-const secoes = document.querySelectorAll('section[id]');
-const itensNav = document.querySelectorAll('.nav-links a[href^="#"]');
-
-const observadorNav = new IntersectionObserver((entradas) => {
-  entradas.forEach(entrada => {
-    if (entrada.isIntersecting) {
-      const id = entrada.target.getAttribute('id');
-      itensNav.forEach(item => {
-        item.classList.remove('nav-ativo');
-        if (item.getAttribute('href') === `#${id}`) {
-          item.classList.add('nav-ativo');
+  /* Fade-in on scroll */
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.dataset.delay || 0;
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, Number(delay));
+          observer.unobserve(entry.target);
         }
       });
-    }
-  });
-}, { threshold: 0.4 });
+    },
+    { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+  );
 
-secoes.forEach(secao => observadorNav.observe(secao));
+  fadeEls.forEach((el) => observer.observe(el));
 
-/* ---- Botão voltar ao topo ---- */
-const btnTopo = document.getElementById('btn-topo');
+  /* Counter animation */
+  function animateCounters() {
+    counters.forEach((counter) => {
+      const target = Number(counter.dataset.target);
+      const duration = 2000;
+      const step = Math.max(1, Math.floor(target / 60));
+      let current = 0;
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 500) {
-    btnTopo.classList.add('visivel');
-  } else {
-    btnTopo.classList.remove('visivel');
-  }
-}, { passive: true });
+      function update() {
+        current += step;
+        if (current >= target) {
+          counter.textContent = target.toLocaleString('pt-BR');
+          return;
+        }
+        counter.textContent = current.toLocaleString('pt-BR');
+        requestAnimationFrame(update);
+      }
 
-btnTopo.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-/* ---- Lightbox (galeria) ---- */
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const lightboxLegenda = document.getElementById('lightbox-legenda');
-const lightboxFechar = document.getElementById('lightbox-fechar');
-
-document.querySelectorAll('.galeria-item').forEach(item => {
-  item.addEventListener('click', () => {
-    const img = item.querySelector('img');
-    const legenda = item.querySelector('.galeria-legenda');
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-    lightboxLegenda.textContent = legenda ? legenda.textContent : '';
-    lightbox.classList.add('ativo');
-    document.body.style.overflow = 'hidden';
-  });
-});
-
-function fecharLightbox() {
-  lightbox.classList.remove('ativo');
-  document.body.style.overflow = '';
-}
-
-lightboxFechar.addEventListener('click', fecharLightbox);
-lightbox.addEventListener('click', (e) => {
-  if (e.target === lightbox) fecharLightbox();
-});
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && lightbox.classList.contains('ativo')) fecharLightbox();
-});
-
-/* ---- Contagem regressiva para as eleições ---- */
-// Eleições 2026 - 1º turno: 4 de outubro de 2026
-const dataEleicao = new Date('2026-10-04T08:00:00-03:00');
-
-function atualizarCountdown() {
-  const agora = new Date();
-  const diff = dataEleicao - agora;
-
-  if (diff <= 0) {
-    document.getElementById('cd-dias').textContent = '0';
-    document.getElementById('cd-horas').textContent = '0';
-    document.getElementById('cd-min').textContent = '0';
-    document.getElementById('cd-seg').textContent = '0';
-    return;
+      update();
+    });
+    countersAnimated = true;
   }
 
-  const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const horas = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const min = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  const seg = Math.floor((diff % (1000 * 60)) / 1000);
+  const numerosSection = document.getElementById('numeros');
+  const numerosObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !countersAnimated) {
+          animateCounters();
+          numerosObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
 
-  document.getElementById('cd-dias').textContent = dias;
-  document.getElementById('cd-horas').textContent = String(horas).padStart(2, '0');
-  document.getElementById('cd-min').textContent = String(min).padStart(2, '0');
-  document.getElementById('cd-seg').textContent = String(seg).padStart(2, '0');
-}
+  if (numerosSection) {
+    numerosObserver.observe(numerosSection);
+  }
 
-atualizarCountdown();
-setInterval(atualizarCountdown, 1000);
+  /* Smooth scroll for anchor links */
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+      const target = document.querySelector(anchor.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+});
